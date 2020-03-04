@@ -6,7 +6,7 @@ import os
 class TestSpeed_Voilation(unittest.TestCase):
 	def testspeed_violation(self):
 		try:
-			df_File = pd.read_excel("List_of_Data_Set.xlsx")
+			df_File = pd.read_csv("List_of_Data_Set.csv")
 			os.system('mkdir Result')
 			for i in df_File.index:
 				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
