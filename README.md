@@ -1,3 +1,13 @@
+## Status
+
+[![Build Status Travis](https://travis-ci.org/prithvisekhar/VehicalDiagnosticAlgo.svg?branch=master)](https://travis-ci.org/prithvisekhar/VehicalDiagnosticAlgo) 
+
+![CI_GITHUB_Internal](https://github.com/prithvisekhar/VehicalDiagnosticAlgo/workflows/CI/badge.svg)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/850d420d714c4c5a899b0de26e00b09d)](https://www.codacy.com/manual/prithvisekhar/VehicalDiagnosticAlgo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prithvisekhar/VehicalDiagnosticAlgo&amp;utm_campaign=Badge_Grade)
+
+[![codecov](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo/branch/master/graph/badge.svg)](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo)
+
 Some of the common road problems today include traffic, accidents and uneconomical driving styles.
 
 In India, it is observed that more than 50% of the accidents occur due to bad road conditions. Road anomalies such as potholes and roughness also add up to traffic congestion in major cities. To solve such issues, it is important to monitor the condition of roads and vehicles regularly.
