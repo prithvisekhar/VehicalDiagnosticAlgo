@@ -14,7 +14,6 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 	vehicleSpeedLess = []
 	vehicleSpeedMore = []
 
-	overloaded = []
 	counter_overload = []
 	temp_counter_overload=0
 	Engine_loadLess = pd.DataFrame(data=engine_loadLess, columns=['engine_load','Index'])
@@ -107,7 +106,7 @@ def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 
 	EngineLoadThreshold=0.50*max(EngineLoad_np)
 	TripTimeThreshold = 0.50*max(TripTime_np)
-	
+
 	for i in CoolantTemperatureF_np.index:
 		if CoolantTemperatureF_np[i] > NormalTemperatureC and CoolantTemperatureF_np[i] < HighestTemperatureC:
 			if (TripTime_np[i] < TripTimeThreshold):
