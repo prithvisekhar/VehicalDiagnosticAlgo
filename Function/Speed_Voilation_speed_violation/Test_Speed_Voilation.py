@@ -7,7 +7,8 @@ class TestSpeed_Voilation(unittest.TestCase):
 	def testspeed_violation(self):
 		try:
 			df_File = pd.read_csv("List_of_Data_Set.csv")
-			os.system('mkdir Result')
+			if not(os.path.isdir("Result")):
+				os.mkdir("Result")
 			for i in df_File.index:
 				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
 				Speed_violate=Speed_Voilation.speed_violation(df["Speed (GPS)(km/h)"],df["GPS Time"],df[' Latitude'],df[' Longitude'],20)
