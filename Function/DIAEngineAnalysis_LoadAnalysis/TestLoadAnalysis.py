@@ -7,7 +7,6 @@ import os
 class TestTraffic(unittest.TestCase):
 	def testTraffic(self):
 		try:
-			
 			df_File = pd.read_csv("List_of_Data_Set.csv")
 			if not os.path.isdir("Result"):
 				os.mkdir("Result")
@@ -20,8 +19,6 @@ class TestTraffic(unittest.TestCase):
 				path=os.path.join("Result/" , TempFile4)
 				if not os.path.isdir(path):
 					os.mkdir(path)
-
-
 				Engine_loadLess, Engine_loadMore, Engine_rpmLess, Engine_rpmMore, VehicleSpeedLess, VehicleSpeedMore, EXPT_SPEED,load_threshold,rpm_threshold,counter_overload = DIAEngineAnalysis.LoadAnalysis(df["Engine Load(%)"], df["Engine RPM(rpm)"],df['Speed (GPS)(km/h)'],df['Trip Time(Since journey start)(s)'])
 				temp_Engine_Load1=df["Engine Load(%)"].replace(to_replace='-',value=0)
 				plt.figure(1)
@@ -36,8 +33,6 @@ class TestTraffic(unittest.TestCase):
 				plt.legend(loc='lower right')
 				plt.savefig(path+"/Engine_Load.png")
 				plt.close()
-			
-
 				plt.figure(2)
 				temp_Speed=df['Speed (GPS)(km/h)'].replace(to_replace='-',value=0)
 				plt.plot(temp_Speed,marker='o',label='Speed')
@@ -50,7 +45,7 @@ class TestTraffic(unittest.TestCase):
 				plt.legend(loc='lower right')
 				plt.savefig(path+"/Vehicle_Speed"+'.png')
 				plt.close()
-				
+
 				temp_Engine_RPM1=df["Engine RPM(rpm)"].replace(to_replace='-',value=0)
 				plt.figure(3)
 				plt.plot(temp_Engine_RPM1,marker='o',label='Engine RPM')
