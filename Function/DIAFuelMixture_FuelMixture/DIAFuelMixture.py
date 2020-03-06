@@ -6,25 +6,25 @@
 import pandas as pd
 
 def FuelMixture(O2_Volts):
-	Lean = []
-	Rich = []
-	Nrml = []
+	TempLean = []
+	TempRich = []
+	TempNrml = []
 
 	for i in range(0, len(O2_Volts)):
 		if O2_Volts[i]== '-' :
 			O2_Volts[i]= '0';
 		O2_Volts[i] = float(O2_Volts[i])		
 		if O2_Volts[i] >= 0.0 and O2_Volts[i] <= 0.1:
-			Lean.append([O2_Volts[i], i])
+			TempLean.append([O2_Volts[i], i])
 		elif O2_Volts[i] >= 0.9 and O2_Volts[i] <= 1.0:
-			Rich.append([O2_Volts[i], i])
+			TempRich.append([O2_Volts[i], i])
 		else:
-			Nrml.append([O2_Volts[i], i])
-	LEAN = pd.DataFrame(data=Lean, columns=['O2_Volts','Index'])
-	RICH = pd.DataFrame(data=Rich, columns=['O2_Volts','Index'])
-	NRML = pd.DataFrame(data=Nrml, columns=['O2_Volts','Index'])
+			TempNrml.append([O2_Volts[i], i])
+	Lean = pd.DataFrame(data=TempLean, columns=['O2_Volts','Index'])
+	Rich = pd.DataFrame(data=TempRich, columns=['O2_Volts','Index'])
+	Nrml = pd.DataFrame(data=TempNrml, columns=['O2_Volts','Index'])
 	
-	return LEAN, RICH, NRML
+	return Lean, Rich, Nrml
 		
   
 
