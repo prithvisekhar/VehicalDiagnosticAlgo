@@ -70,7 +70,6 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
         #ACTUAL SPEED = (ENGINE RPM * PERIMETER OF TYRE)/(AXLE RATIO * GEAR RATIO)
 		
 		EXPT_SPEED.append(0.4*(engine_rpm[i] *60*3.14*2 *TYRE_SIZE*25.4*0.000001)/(Gear_Ratio*AXLE_RATIO))
-		
 		if(Vehicle_speed[i]<(EXPT_SPEED[i])):  # Checking whether vehicle speed is less than expected speed
 			vehicleSpeedLess.append([Vehicle_speed[i], i])
 			VehicleSpeedLess = pd.DataFrame(data=vehicleSpeedLess, columns=['Vehicle_speed','Index'])
