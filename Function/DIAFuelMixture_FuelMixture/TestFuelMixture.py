@@ -10,7 +10,6 @@ class TestFuel_Mixture(unittest.TestCase):
 			df_File = pd.read_csv("List_of_Data_Set.csv")
 			if not(os.path.isdir("Result")):
 				os.mkdir("Result")
-			
 			for i in df_File.index:
 				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
 				temp_File1=df_File["Input_File_Name"][i].split('/')
