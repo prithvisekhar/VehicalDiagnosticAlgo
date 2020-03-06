@@ -1,6 +1,2 @@
-File,Function,Test_File,Type,Testpy_File
-Speed_Voilation.py,speed_violation,List_of_Data_Set.csv,Graph,Test_Speed_Voilation.py
-Traffic.py,traffic,List_of_Data_Set.csv,Graph,Test_Traffic.py
-Combustion_Mixture.py,combustion_mixture,List_of_Data_Set.csv,Graph,Test_Combustion_Mixture.py
-Coolant_Temperature.py,coolant,List_of_Data_Set.csv,Graph,Test_Coolant_Temperature.py
-Load_Analysis.py,loadanalysis,List_of_Data_Set.csv,Graph,Test_Load_Analysis.py
+DIAEngineAnalysis_Coolant
+DIAEngineAnalysis_LoadAnalysis
