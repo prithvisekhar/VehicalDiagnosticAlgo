@@ -34,7 +34,7 @@ class TestFuel_Mixture(unittest.TestCase):
 				plt.legend(loc='lower right')
 				plt.savefig(path+'.png')
 				plt.close()
-	
+
 		except AssertionError as e:
 			f = open("Error_Fuel_Mixture", "a")
 			f.write("TestCase_no_0:\n\t"+str(e)+" \n")
