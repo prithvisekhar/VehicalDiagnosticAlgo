@@ -12,8 +12,6 @@ class TestCoolant_Temperature(unittest.TestCase):
 			if not(os.path.isdir("Result")):
 				os.mkdir("Result")
 			for i in df_File.index:
-				temp_coolant_temperature_F=[]
-
 				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
 				TempFile1=df_File["Input_File_Name"][i].split('/')
 				TempFile3=TempFile1[-1].split('.')
@@ -21,7 +19,7 @@ class TestCoolant_Temperature(unittest.TestCase):
 				path=os.path.join("Result/",TempFile4)
 
 
-				CoolantTemperatureF_np,HighestTemperatureC,NormalTemperatureC,LowestTemperatureC,SafeState1,SafeState2,SafeState3,State0,IndexTripTimeThreshold,EngineLoadThreshold=DIAEngineAnalysis.Coolant(df['Engine Coolant Temperature(Â°C)'].replace(to_replace="-", value="0"),df['Engine Load(%)'].replace(to_replace="-", value="0"),df['Trip Time(Since journey start)(s)'].replace(to_replace="-", value="0"))
+				CoolantTemperatureF_np,HighestTemperatureC,NormalTemperatureC,SafeState1,SafeState2,SafeState3,State0,IndexTripTimeThreshold,EngineLoadThreshold=DIAEngineAnalysis.Coolant(df['Engine Coolant Temperature(Â°C)'].replace(to_replace="-", value="0"),df['Engine Load(%)'].replace(to_replace="-", value="0"),df['Trip Time(Since journey start)(s)'].replace(to_replace="-", value="0"))
 
 
 
@@ -55,13 +53,12 @@ class TestCoolant_Temperature(unittest.TestCase):
 				axs[2].axvline(x=IndexTripTimeThreshold)
 
 				
-				fig.savefig(path+'.png')	
+				fig.savefig(path+'.png')
 
 
 
 
 
-			
 		except AssertionError as e:
 			f = open("ErrorMessage", "a")
 			f.write(str(e)+" \n")
