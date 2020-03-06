@@ -75,6 +75,8 @@ def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 
 	return EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore, VehicleSpeedLess, VehicleSpeedMore,ExpectedSpeed,LoadThreshold,RPMThreshold,CounterOverload
 
+"""Function checks the coolant temperature and compare it with the threshold. Returns Safestate or not."""
+
 def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	State0=[]
 	State1=[]
