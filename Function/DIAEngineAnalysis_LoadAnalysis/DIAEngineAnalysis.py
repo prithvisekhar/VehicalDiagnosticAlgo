@@ -1,3 +1,5 @@
+"""Function checks the load on the system and returns whether it is overloaded or not."""
+
 import numpy as np
 import pandas as pd
 def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
@@ -30,16 +32,16 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 			engine_rpm[i] = '0';
 		engine_load[i] = float(engine_load[i])
 		engine_rpm[i] = float(engine_rpm[i])
-		
+
 		if maxinload < engine_load[i]:
 			maxinload = engine_load[i]
 
 		if maxinrpm < engine_rpm[i]:
 			maxinrpm = engine_rpm[i]
-			
+
 	load_threshold = 0.5 * maxinload
 	rpm_threshold = 0.5 * maxinrpm
-	
+
 	for i in engine_rpm.index:
 		if Vehicle_speed[i] == '-' :
 			Vehicle_speed[i]= '0';
@@ -52,23 +54,22 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 		else:
 			engine_loadMore.append([engine_load[i], i])
 			Engine_loadMore = pd.DataFrame(data=engine_loadMore, columns=['engine_load','Index'])
-		
+
 		if(engine_rpm[i]<rpm_threshold):  # Checking whether vehicle speed is less than expected speed
 			engine_rpmLess.append([engine_rpm[i], i])
 			Engine_rpmLess = pd.DataFrame(data=engine_rpmLess, columns=['engine_rpm','Index'])
 		else:
 			engine_rpmMore.append([engine_rpm[i], i])
 			Engine_rpmMore = pd.DataFrame(data=engine_rpmMore, columns=['engine_rpm','Index'])
-			
+
 		if engine_load[i] > load_threshold and  engine_rpm[i] > rpm_threshold:
 			temp_counter_overload = temp_counter_overload + 1 # Checking whether engine load and engine rpm are less than threshold
 		counter_overload.append(temp_counter_overload)
-			
-		
+
 		Vehicle_speed[i] = float(Vehicle_speed[i])
-		
+
         #ACTUAL SPEED = (ENGINE RPM * PERIMETER OF TYRE)/(AXLE RATIO * GEAR RATIO)
-		
+
 		EXPT_SPEED.append(0.4*(engine_rpm[i] *60*3.14*2 *TYRE_SIZE*25.4*0.000001)/(Gear_Ratio*AXLE_RATIO))
 		if(Vehicle_speed[i]<(EXPT_SPEED[i])):  # Checking whether vehicle speed is less than expected speed
 			vehicleSpeedLess.append([Vehicle_speed[i], i])
