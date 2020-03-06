@@ -11,7 +11,7 @@ class TestSpeed_Voilation(unittest.TestCase):
 				os.mkdir("Result")
 			for i in df_File.index:
 				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
-				Speed_violate=Speed_Voilation.speed_violation(df["Speed (GPS)(km/h)"],df["GPS Time"],df[' Latitude'],df[' Longitude'],20)
+				Speed_violate=Speed_Voilation.speed_violation(df["Speed (GPS)(km/h)"],df[' Latitude'],df[' Longitude'],20)
 				t=df["Speed (GPS)(km/h)"]
 				t2=t.replace(to_replace='-',value=0)
 				plt.figure()
