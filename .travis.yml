@@ -26,8 +26,8 @@ branches:
   only:
    - master
 after_success:
-    - coveralls
-    - codecov
+#    - coveralls
+#    - codecov
     
 
 
