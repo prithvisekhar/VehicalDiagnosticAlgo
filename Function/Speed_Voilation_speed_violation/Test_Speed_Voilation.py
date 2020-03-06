@@ -21,13 +21,9 @@ class TestSpeed_Voilation(unittest.TestCase):
 				t3=t1[-1].split('.')
 				plt.savefig('Result/'+str(t3[0])+'.png')
 
-
-			
 		except AssertionError as e:
 			f = open("Difference_Report_Speed_Voilation", "a")
 			f.write("TestCase_no_0:\n\t"+str(e)+" \n")
 
 if __name__ == '__main__':
 	unittest.main()
-
-
