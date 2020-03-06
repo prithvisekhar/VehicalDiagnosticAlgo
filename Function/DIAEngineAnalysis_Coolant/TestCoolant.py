@@ -19,7 +19,7 @@ class TestCoolant_Temperature(unittest.TestCase):
 				path=os.path.join("Result/",TempFile4)
 
 
-				CoolantTemperatureF_np,HighestTemperatureC,SafeState1,SafeState2,SafeState3,State0,IndexTripTimeThreshold,EngineLoadThreshold=DIAEngineAnalysis.Coolant(df['Engine Coolant Temperature(Â°C)'].replace(to_replace="-", value="0"),df['Engine Load(%)'].replace(to_replace="-", value="0"),df['Trip Time(Since journey start)(s)'].replace(to_replace="-", value="0"))
+				CoolantTemperatureF_np,HighestTemperatureC,NormalTemperatureC,LowestTemperatureC,SafeState1,SafeState2,SafeState3,State0,IndexTripTimeThreshold,EngineLoadThreshold=DIAEngineAnalysis.Coolant(df['Engine Coolant Temperature(Â°C)'].replace(to_replace="-", value="0"),df['Engine Load(%)'].replace(to_replace="-", value="0"),df['Trip Time(Since journey start)(s)'].replace(to_replace="-", value="0"))
 
 
 
