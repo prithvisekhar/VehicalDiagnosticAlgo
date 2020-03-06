@@ -63,7 +63,7 @@ class TestCoolant_Temperature(unittest.TestCase):
 
 			
 		except AssertionError as e:
-			f = open("Error Message", "a")
+			f = open("ErrorMessage", "a")
 			f.write(str(e)+" \n")
 
 if __name__ == '__main__':
