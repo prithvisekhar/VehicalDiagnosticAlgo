@@ -78,8 +78,6 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 			vehicleSpeedMore.append([Vehicle_speed[i], i])
 			VehicleSpeedMore = pd.DataFrame(data=vehicleSpeedMore, columns=['Vehicle_speed','Index'])
 
-
-			
 	return Engine_loadLess, Engine_loadMore, Engine_rpmLess, Engine_rpmMore, VehicleSpeedLess, VehicleSpeedMore,EXPT_SPEED,load_threshold,rpm_threshold,counter_overload
 
 def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
