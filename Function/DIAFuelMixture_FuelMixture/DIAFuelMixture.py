@@ -11,8 +11,8 @@ def FuelMixture(O2_Volts):
 	TempNrml = []
 
 	for i in range(0, len(O2_Volts)):
-		if O2_Volts[i]== '-' :
-			O2_Volts[i]= '0';
+		if O2_Volts[i] == '-' :
+			O2_Volts[i] = '0';
 		O2_Volts[i] = float(O2_Volts[i])		
 		if O2_Volts[i] >= 0.0 and O2_Volts[i] <= 0.1:
 			TempLean.append([O2_Volts[i], i])
@@ -25,6 +25,3 @@ def FuelMixture(O2_Volts):
 	Nrml = pd.DataFrame(data=TempNrml, columns=['O2_Volts','Index'])
 	
 	return Lean, Rich, Nrml
-		
-  
-
