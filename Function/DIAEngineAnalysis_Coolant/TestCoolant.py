@@ -6,7 +6,7 @@ import os
 import numpy as np
 
 class TestCoolant_Temperature(unittest.TestCase):
-	def testCoolantTemperature(self):
+	def TestCoolantTemperature(self):
 		try:
 			df_File = pd.read_csv("List_of_Data_Set.csv")
 			if not(os.path.isdir("Result")):
