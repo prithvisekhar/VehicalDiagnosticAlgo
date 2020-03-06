@@ -1,86 +1,79 @@
+"""Function checks the load on the engine and returns it as overloaded or not."""
+
 import numpy as np
 import pandas as pd
-def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
-	Gear_Ratio = 1.5
-	AXLE_RATIO = 4
-	TYRE_SIZE = 12
-	EXPT_SPEED = []
-	maxinload = 0
-	maxinrpm = 0
-	engine_loadLess = []
-	engine_loadMore = []
-	engine_rpmLess = []
-	engine_rpmMore = []
-	vehicleSpeedLess = []
-	vehicleSpeedMore = []
+def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
+	GearRatio = 1.5
+	AxleRatio = 4
+	TyreSize = 12
+	ExpectedSpeed = []
+	MaxLoad = 0
+	MaxRPM = 0
+	TempEngineLoadLess = []
+	TempEngineLoadMore = []
+	TempEngineRPMLess = []
+	TempEngineRPMMore = []
+	TempVehicleSpeedLess = []
+	TempVehicleSpeedMore = []
 
-	counter_overload = []
-	temp_counter_overload=0
-	Engine_loadLess = pd.DataFrame(data=engine_loadLess, columns=['engine_load','Index'])
-	Engine_loadMore = pd.DataFrame(data=engine_loadMore, columns=['engine_load','Index'])
-	Engine_rpmLess = pd.DataFrame(data=engine_rpmLess, columns=['engine_rpm','Index'])
-	Engine_rpmMore = pd.DataFrame(data=engine_rpmMore, columns=['engine_rpm','Index'])
-	VehicleSpeedLess = pd.DataFrame(data=vehicleSpeedLess, columns=['Vehicle_speed','Index'])
-	VehicleSpeedMore = pd.DataFrame(data=vehicleSpeedMore, columns=['Vehicle_speed','Index'])
+	CounterOverload = []
+	TempCounterOverload=0
 
-	for i in engine_load.index:
-		if engine_load[i] == '-' :
-			engine_load[i] = '0';
-		if engine_rpm[i] == '-' :
-			engine_rpm[i] = '0';
-		engine_load[i] = float(engine_load[i])
-		engine_rpm[i] = float(engine_rpm[i])
-		
-		if maxinload < engine_load[i]:
-			maxinload = engine_load[i]
+	for i in EngineLoad.index:
+		if EngineLoad[i] == '-' :
+			EngineLoad[i] = '0';
+		if EngineRPM[i] == '-' :
+			EngineRPM[i] = '0';
+		EngineLoad[i] = float(EngineLoad[i])
+		EngineRPM[i] = float(EngineRPM[i])
 
-		if maxinrpm < engine_rpm[i]:
-			maxinrpm = engine_rpm[i]
-			
-	load_threshold = 0.5 * maxinload
-	rpm_threshold = 0.5 * maxinrpm
-	
-	for i in engine_rpm.index:
-		if Vehicle_speed[i] == '-' :
-			Vehicle_speed[i]= '0';
-		if tripTime[i] == '-' :
-			tripTime[i] = '0';
+		if MaxLoad < EngineLoad[i]:
+			MaxLoad = EngineLoad[i]
 
-		if(engine_load[i]<load_threshold):  # Checking whether vehicle speed is less than expected speed
-			engine_loadLess.append([engine_load[i], i])
-			Engine_loadLess = pd.DataFrame(data=engine_loadLess, columns=['engine_load','Index'])
+		if MaxRPM < EngineRPM[i]:
+			MaxRPM = EngineRPM[i]
+
+	LoadThreshold = 0.5 * MaxLoad
+	RPMThreshold = 0.5 * MaxRPM
+
+	for i in EngineRPM.index:
+		if VehicleSpeed[i] == '-' :
+			VehicleSpeed[i]= '0';
+		if TripTime[i] == '-' :
+			TripTime[i] = '0';
+
+		if(EngineLoad[i]<LoadThreshold):  # Checking whether vehicle speed is less than expected speed
+			TempEngineLoadLess.append([EngineLoad[i], i])
 		else:
-			engine_loadMore.append([engine_load[i], i])
-			Engine_loadMore = pd.DataFrame(data=engine_loadMore, columns=['engine_load','Index'])
-		
-		if(engine_rpm[i]<rpm_threshold):  # Checking whether vehicle speed is less than expected speed
-			engine_rpmLess.append([engine_rpm[i], i])
-			Engine_rpmLess = pd.DataFrame(data=engine_rpmLess, columns=['engine_rpm','Index'])
+			TempEngineLoadMore.append([EngineLoad[i], i])
+
+		if(EngineRPM[i]<RPMThreshold):  # Checking whether vehicle speed is less than expected speed
+			TempEngineRPMLess.append([EngineRPM[i], i])
 		else:
-			engine_rpmMore.append([engine_rpm[i], i])
-			Engine_rpmMore = pd.DataFrame(data=engine_rpmMore, columns=['engine_rpm','Index'])
-			
-		if engine_load[i] > load_threshold and  engine_rpm[i] > rpm_threshold:
-			temp_counter_overload = temp_counter_overload + 1 # Checking whether engine load and engine rpm are less than threshold
-		counter_overload.append(temp_counter_overload)
-			
-		
-		Vehicle_speed[i] = float(Vehicle_speed[i])
-		
+			TempEngineRPMMore.append([EngineRPM[i], i])
+
+		if EngineLoad[i] > LoadThreshold and  EngineRPM[i] > RPMThreshold:
+			temp_CounterOverload = temp_CounterOverload + 1 # Checking whether engine load and engine rpm are less than threshold
+		CounterOverload.append(temp_CounterOverload)
+
+		VehicleSpeed[i] = float(VehicleSpeed[i])
+
         #ACTUAL SPEED = (ENGINE RPM * PERIMETER OF TYRE)/(AXLE RATIO * GEAR RATIO)
-		
-		EXPT_SPEED.append(0.4*(engine_rpm[i] *60*3.14*2 *TYRE_SIZE*25.4*0.000001)/(Gear_Ratio*AXLE_RATIO))
-		
-		if(Vehicle_speed[i]<(EXPT_SPEED[i])):  # Checking whether vehicle speed is less than expected speed
-			vehicleSpeedLess.append([Vehicle_speed[i], i])
-			VehicleSpeedLess = pd.DataFrame(data=vehicleSpeedLess, columns=['Vehicle_speed','Index'])
+		ExpectedSpeed.append(0.4*(EngineRPM[i] *60*3.14*2 *TyreSize*25.4*0.000001)/(GearRatio*AxleRatio))
+
+		if(VehicleSpeed[i]<(ExpectedSpeed[i])):  # Checking whether vehicle speed is less than expected speed
+			TempVehicleSpeedLess.append([VehicleSpeed[i], i])
 		else:
-			vehicleSpeedMore.append([Vehicle_speed[i], i])
-			VehicleSpeedMore = pd.DataFrame(data=vehicleSpeedMore, columns=['Vehicle_speed','Index'])
+			TempVehicleSpeedMore.append([VehicleSpeed[i], i])
 
+	EngineLoadLess = pd.DataFrame(data=TempEngineLoadLess, columns=['EngineLoad','Index'])
+	EngineLoadMore = pd.DataFrame(data=TempEngineLoadMore, columns=['EngineLoad','Index'])
+	EngineRPMLess = pd.DataFrame(data=TempEngineRPMLess, columns=['EngineRPM','Index'])
+	EngineRPMMore = pd.DataFrame(data=TempEngineRPMMore, columns=['EngineRPM','Index'])
+	VehicleSpeedLess = pd.DataFrame(data=TempVehicleSpeedLess, columns=['VehicleSpeed','Index'])
+	VehicleSpeedMore = pd.DataFrame(data=TempVehicleSpeedMore, columns=['VehicleSpeed','Index'])
 
-			
-	return Engine_loadLess, Engine_loadMore, Engine_rpmLess, Engine_rpmMore, VehicleSpeedLess, VehicleSpeedMore,EXPT_SPEED,load_threshold,rpm_threshold,counter_overload
+	return EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore, VehicleSpeedLess, VehicleSpeedMore,ExpectedSpeed,LoadThreshold,RPMThreshold,CounterOverload
 
 def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	State0=[]
