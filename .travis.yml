@@ -13,7 +13,7 @@ install:
 script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - pwd
-  - cd Function
+  - ls
   #- python Generating_Test_Case.py
   #- for dir in /home/travis/build/prithvisekhar/VehicalDiagnosticAlgo/Function/*/; do cd $dir; python Test_*.py; coverage run Test_*.py; coverage html;cd .. ; done
   #- ls
