@@ -5,7 +5,6 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 	AXLE_RATIO = 4
 	TYRE_SIZE = 12
 	EXPT_SPEED = []
-	OVERLOAD_COUNTER = 0
 	maxinload = 0
 	maxinrpm = 0
 	engine_loadLess = []
@@ -25,13 +24,11 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 	VehicleSpeedLess = pd.DataFrame(data=vehicleSpeedLess, columns=['Vehicle_speed','Index'])
 	VehicleSpeedMore = pd.DataFrame(data=vehicleSpeedMore, columns=['Vehicle_speed','Index'])
 
-	Overloaded = pd.DataFrame(data=overloaded, columns=['Trip_Time','Index'])
-
-	for i in range(len(engine_load)):
-		if engine_load[i]== '-' :
-			engine_load[i]= '0';
-		if engine_rpm[i]== '-' :
-			engine_rpm[i]= '0';
+	for i in engine_load.index:
+		if engine_load[i] == '-' :
+			engine_load[i] = '0';
+		if engine_rpm[i] == '-' :
+			engine_rpm[i] = '0';
 		engine_load[i] = float(engine_load[i])
 		engine_rpm[i] = float(engine_rpm[i])
 		
@@ -44,11 +41,11 @@ def LoadAnalysis(engine_load,engine_rpm,Vehicle_speed, tripTime):
 	load_threshold = 0.5 * maxinload
 	rpm_threshold = 0.5 * maxinrpm
 	
-	for i in range(len(engine_rpm)):
-		if Vehicle_speed[i]== '-' :
+	for i in engine_rpm.index:
+		if Vehicle_speed[i] == '-' :
 			Vehicle_speed[i]= '0';
-		if tripTime[i]== '-' :
-			tripTime[i]= '0';
+		if tripTime[i] == '-' :
+			tripTime[i] = '0';
 
 		if(engine_load[i]<load_threshold):  # Checking whether vehicle speed is less than expected speed
 			engine_loadLess.append([engine_load[i], i])
@@ -111,7 +108,7 @@ def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	EngineLoadThreshold=0.50*max(EngineLoad_np)
 	TripTimeThreshold = 0.50*max(TripTime_np)
 	
-	for i in range(len(CoolantTemperatureF_np)):
+	for i in CoolantTemperatureF_np.index:
 		if CoolantTemperatureF_np[i] > NormalTemperatureC and CoolantTemperatureF_np[i] < HighestTemperatureC:
 			if (TripTime_np[i] < TripTimeThreshold):
 				IndexTripTimeThreshold=i
@@ -132,7 +129,3 @@ def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	SafeState3 = pd.DataFrame(data=State3, columns=['Safestate','Index'])
 
 	return CoolantTemperatureF_np,HighestTemperatureC,NormalTemperatureC,LowestTemperatureC,SafeState1,SafeState2,SafeState3,State0,IndexTripTimeThreshold,EngineLoadThreshold
-
-
-
-
