@@ -1,4 +1,5 @@
-Coolant Temperature: It compares the value of coolant temperature with that of the predefined
+##Coolant Temperature:
+It compares the value of coolant temperature with that of the predefined
 values of coolant temperature to check whether the system is running in the safe state or not.
 
 Input:
