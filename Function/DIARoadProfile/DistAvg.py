@@ -4,14 +4,14 @@
 
 def AverageDistance(Distance,Fuel,Kmpl):
 	ExpectedDistance = []
-    TotalDistance = Distance.iloc[-1]
-    TotalDistance = float(TotalDistance)
-    print("The total Distanceance covered:", TotalDistance)
-    RemainingFuel = Fuel.iloc[-1]
-    #RemainingFuel = float(RemainingFuel)
-    #UsedFuel = 100 - RemainingFuel
-    UsedFuel = Fuel.iloc[-1] - Fuel.iloc[1]
-    print("UsedFuel:", UsedFuel)
+    	TotalDistance = Distance.iloc[-1]
+    	TotalDistance = float(TotalDistance)
+    	print("The total Distanceance covered:", TotalDistance)
+    	RemainingFuel = Fuel.iloc[-1]
+    	#RemainingFuel = float(RemainingFuel)
+    	#UsedFuel = 100 - RemainingFuel
+    	UsedFuel = Fuel.iloc[-1] - Fuel.iloc[1]
+    	print("UsedFuel:", UsedFuel)
 	Mileage = TotalDistance/UsedFuel
 	TimeIndex = input('Enter the Time : ')
 	for i in Distance.index:
