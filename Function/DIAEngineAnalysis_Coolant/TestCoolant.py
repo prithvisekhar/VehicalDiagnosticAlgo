@@ -12,7 +12,7 @@ class TestCoolant_Temperature(unittest.TestCase):
 			if not(os.path.isdir("Result")):
 				os.mkdir("Result")
 			for i in df_File.index:
-				df = pd.read_excel(str(df_File["Input_File_Name"][i]))
+				df = pd.read_csv(str(df_File["Input_File_Name"][i]))
 				TempFile1=df_File["Input_File_Name"][i].split('/')
 				TempFile3=TempFile1[-1].split('.')
 				TempFile4=str(TempFile3[0])
