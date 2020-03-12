@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 class TestLoad_Analysis(unittest.TestCase):
-	def TestLoadAnalysis(self):
+	def testLoadAnalysis(self):
 		try:
 			df_File = pd.read_csv("List_of_Data_Set.csv")
 			if not os.path.isdir("Result"):
