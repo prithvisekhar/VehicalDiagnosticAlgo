@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 class TestFuel_Mixture(unittest.TestCase):
-	def TestFuelMixture(self):
+	def testFuelMixture(self):
 		try:
 			df_File = pd.read_csv("List_of_Data_Set.csv")
 			if not(os.path.isdir("Result")):
