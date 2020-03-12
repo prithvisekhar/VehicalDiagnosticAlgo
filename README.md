@@ -8,6 +8,8 @@
 
 [![codecov](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo/branch/master/graph/badge.svg)](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/4fa4a36a9eaf145944ac/maintainability)](https://codeclimate.com/github/prithvisekhar/VehicalDiagnosticAlgo/maintainability)
+
 Some of the common road problems today include traffic, accidents and uneconomical driving styles.
 
 In India, it is observed that more than 50% of the accidents occur due to bad road conditions. Road anomalies such as potholes and roughness also add up to traffic congestion in major cities. To solve such issues, it is important to monitor the condition of roads and vehicles regularly.
