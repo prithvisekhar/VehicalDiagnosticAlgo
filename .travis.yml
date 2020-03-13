@@ -19,8 +19,8 @@ script:
   #- for dir in /home/travis/build/prithvisekhar/VehicalDiagnosticAlgo/Function/*/; do cd $dir; python Test_*.py; coverage run Test_*.py; coverage html;cd .. ; done
   - ls
   # while read p; do  echo $p;ls; cd $p ;ls ;cd .. ; done <Running_Pipline.csv
-  -  while read p; do  echo $PWD+$p; done <Running_Pipline.csv
-  - pwd
+  - python Run_Pipline.py
+  - bash Running_Function.sh
   - echo "Done Done"
   
 
