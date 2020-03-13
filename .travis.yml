@@ -14,17 +14,14 @@ script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - pwd
   - cd Function
-  -pwd
   #- python Generating_Test_Case.py
   #- for dir in /home/travis/build/prithvisekhar/VehicalDiagnosticAlgo/Function/*/; do cd $dir; python Test_*.py; coverage run Test_*.py; coverage html;cd .. ; done
-  - ls
+  #- ls
   # while read p; do  echo $p;ls; cd $p ;ls ;cd .. ; done <Running_Pipline.csv
   - python Run_Pipline.py
   - bash Running_Function.sh
   - echo "Done Done"
-  
 
- # - coverage run 1.py
 branches:
   only:
    - master
