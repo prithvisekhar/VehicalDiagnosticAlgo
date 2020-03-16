@@ -41,7 +41,6 @@ Aim: To use OBD adapter to record and share necessary data.
 -   Now you are ready to set up a profile. Go back to the first screen and again press the settings button on the bottom left – Select Vehicle Profile – Create New Profile- Then fill in the boxes with details about your car.
 -   Now let&#39;s select the sensor data we need to capture. For that go to Settings and select &#39;Data Logging and Upload&#39; and in that &#39;Select What to Log&#39;. You can select the sensor data to be recorded from the three dots menu on the top right corner.
 -   Here is the list of sensors that needs to be selected
-
 -   GPS Time
 -   Device Time
 -   Longitude
@@ -122,7 +121,7 @@ Aim: To use OBD adapter to record and share necessary data.
 -   OK that about sums up what you should do to get started with Torque for Android.
 -   Back at the first screen if all 4 icons are blue and have stopped flashing, you&#39;re ready to begin.
 
-## Important Tips:
+## Important Tips
 
 1.  Start Logging data after the ignition.
 2.  Make sure the phone stays connected to the internet at all time when logging data. If not, it can tamper the accuracy of data (most importantly GPS data).
@@ -130,7 +129,7 @@ Aim: To use OBD adapter to record and share necessary data.
 4.  Reset trip Counters for every log. (End of current trip or start of the next trip)
 5.  Email the datasets as soon as the trip ends.
 
-## Additional Resources:
+## Additional Resources
 
 -   Torque Pro Application Setup [https://www.youtube.com/watch?v=Es5sDrVRyuI](https://www.youtube.com/watch?v=Es5sDrVRyuI)
 -   Video Plugin [https://www.youtube.com/watch?v=w4yvA9gZON8](https://www.youtube.com/watch?v=w4yvA9gZON8)
