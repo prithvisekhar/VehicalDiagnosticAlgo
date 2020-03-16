@@ -1,14 +1,14 @@
-# Speed Violation: 
+# Speed Violation
 It checks the speed of the system and returns the location at which the speed
 of the system exceeded the permissible value.
 
- ## Input:
+ ## Input
 - Latitude
 - Longitude
 - GPS Time
 - Speed (GPS)(km/h)
 
- ## Output:
+ ## Output
 - Speed
 - Index
 
