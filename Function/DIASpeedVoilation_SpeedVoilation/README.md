@@ -12,7 +12,7 @@ of the system exceeded the permissible value.
 
 -   Speed (GPS)(km/h)
 
- ##  Output
+## Output
  
 -   Speed
 
