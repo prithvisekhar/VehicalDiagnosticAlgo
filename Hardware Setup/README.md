@@ -4,8 +4,8 @@ Aim: To use OBD adapter to record and share necessary data.
 
 ## Prerequisites
 
-1.   OBD Adapter
-2.   Torque Pro Android Application
+1.  OBD Adapter
+2.  Torque Pro Android Application
 
 ## Procedure
 
@@ -113,7 +113,6 @@ Aim: To use OBD adapter to record and share necessary data.
 -   Most of them are by default selected. This is a one-time operation.
 -   Next comes the sharing of the recorded data. For this, we have to go back to the &#39;Data logging and Upload&#39;. Select &#39;User Email Address&#39;. This email address will be used to send the logged data every time we command it to.
 -   The rest of the settings can be explored but mostly they are left by default.
-
 -   Right, let&#39;s go back to the first screen and this time we go into &#39;Real-time Information&#39;. This brings up a set of six gauges, but if you swipe left, right, up or down, depending on which way you&#39;re holding the screen it reveals more gauges.
 -   These are fully customizable. Anything from style and size, to what data they display can be changed.
 -   Press and hold a blank area of screen and you will have the option to &#39;Add a Display&#39; Here you select the type of gauge you want, then what data you want it to show, then the size.
@@ -125,11 +124,11 @@ Aim: To use OBD adapter to record and share necessary data.
 
 ## Important Tips:
 
-1.   Start Logging data after the ignition.
-2.   Make sure the phone stays connected to the internet at all time when logging data. If not, it can tamper the accuracy of data (most importantly GPS data).
-3.   Make sure not to keep the phone on low power mode while logging data. The reason is the same as the above, it can capture inaccurate data.
-4.   Reset trip Counters for every log. (End of current trip or start of the next trip)
-5.   Email the datasets as soon as the trip ends.
+1.  Start Logging data after the ignition.
+2.  Make sure the phone stays connected to the internet at all time when logging data. If not, it can tamper the accuracy of data (most importantly GPS data).
+3.  Make sure not to keep the phone on low power mode while logging data. The reason is the same as the above, it can capture inaccurate data.
+4.  Reset trip Counters for every log. (End of current trip or start of the next trip)
+5.  Email the datasets as soon as the trip ends.
 
 ## Additional Resources:
 
