@@ -35,22 +35,22 @@ The idea not only serves the purpose of detection of, but has several other poss
 
 -   Driver applications
 
-  -   Fuel efficiency
-  -   Proximity of routes (point A to B)
-  -   Drive cycles
+-   Fuel efficiency
+-   Proximity of routes (point A to B)
+-   Drive cycles
   
 -   Government applications
 
-  -   Traffic violations
-  -   Road health
-  -   Road emergencies
+-   Traffic violations
+-   Road health
+-   Road emergencies
   
 -   Vehicle applications
 
-  -   Fleet management
-  -   Vehicle wear and tear
-  
+-   Fleet management
+-   Vehicle wear and tear
+
 -   Allied services
 
-  -   Insurance services (Based on drive cycles)
-  -   Access to SOS – (Emergency and Breakdown)
+-   Insurance services (Based on drive cycles)
+-   Access to SOS – (Emergency and Breakdown)
