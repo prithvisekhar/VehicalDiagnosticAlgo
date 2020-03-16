@@ -11,40 +11,40 @@ Aim: To use OBD adapter to record and share necessary data.
 
 ### OBD Adapter-
 
-- Make sure your car is OBD2 compatible. You can check our list of OBD2 compatible cars here.
-- Ensure that the car supports the latest OBD2 protocol. (Older versions might not work on new OBD2 modules).
-- Locate your car&#39;s OBD II diagnostic port and plug in your scanner. It&#39;s usually found under the driver&#39;s side dashboard, under the steering wheel.
-- Turn on your ignition by turning your key to the 2nd turn. The engine will be off, but this provides power to your dash lights, radio and also the OBD II diagnostic port.
-- From your Android Smartphone or tablet, go to your SETTINGS, then WIRELESS &amp; NETWORKS, then BLUETOOTH SETTINGS. Turn on Bluetooth, scan for the nearby devices and pair your phone with the scanner. The name of the scanner will vary depending on the model.
+-Make sure your car is OBD2 compatible. You can check our list of OBD2 compatible cars here.
+-Ensure that the car supports the latest OBD2 protocol. (Older versions might not work on new OBD2 modules).
+-Locate your car&#39;s OBD II diagnostic port and plug in your scanner. It&#39;s usually found under the driver&#39;s side dashboard, under the steering wheel.
+-Turn on your ignition by turning your key to the 2nd turn. The engine will be off, but this provides power to your dash lights, radio and also the OBD II diagnostic port.
+-From your Android Smartphone or tablet, go to your SETTINGS, then WIRELESS &amp; NETWORKS, then BLUETOOTH SETTINGS. Turn on Bluetooth, scan for the nearby devices and pair your phone with the scanner. The name of the scanner will vary depending on the model.
 
 ### Bluetooth Pairing Issues
 
-- Unpair any existing Bluetooth devices such as, smartwatch, headset or speaker
-- Make sure the App is not running in the background. Close the app before pairing
-- If the password 1234 doesn&#39;t work, try 12345 or 0000
-- Turn off Bluetooth, turn it back on and rescan for the device
+-Unpair any existing Bluetooth devices such as, smartwatch, headset or speaker
+-Make sure the App is not running in the background. Close the app before pairing
+-If the password 1234 doesn&#39;t work, try 12345 or 0000
+-Turn off Bluetooth, turn it back on and rescan for the device
 
 ### Android Application
 
-- Torque Pro ( [https://play.google.com/store/apps/d...l.torque&amp;hl=en](https://play.google.com/store/apps/d...l.torque&amp;hl=en) ) is one of the most popular apps for reading the OBDII data.
-- It has both diagnosis capabilities (reading the error codes, system checkup, resetting error codes etc.) as well as real-time dashboard and graphing capabilities.
-- It has a pretty useful - although a bit cumbersome and non-intuitive - GUI and allows the user to setup various dashboards as per their liking.
-- It also offers various &quot;themes&quot; (for colors, fonts and appearances etc.) to choose from.
-- Home Screen of the App
+-Torque Pro ( [https://play.google.com/store/apps/d...l.torque&amp;hl=en](https://play.google.com/store/apps/d...l.torque&amp;hl=en) ) is one of the most popular apps for reading the OBDII data.
+-It has both diagnosis capabilities (reading the error codes, system checkup, resetting error codes etc.) as well as real-time dashboard and graphing capabilities.
+-It has a pretty useful - although a bit cumbersome and non-intuitive - GUI and allows the user to setup various dashboards as per their liking.
+-It also offers various &quot;themes&quot; (for colors, fonts and appearances etc.) to choose from.
+-Home Screen of the App
 
-- The top left-hand corner you have 4 blue icons. The left one is GPS it will flash until you get GPS lock on. The next icon across is just to show that the app is running.
-- The next is an icon to show status of connection to the ELM327 OBD device. Flashing = Not connected and Solid Blue = Connected.
-- The right-hand icon is connection to the car&#39;s ECU, for this the ignition needs to be on and then same as before. Flashing = Not connected and Solid Blue = Connected.
-- Although not necessary, you need to set up a profile for Torque to correctly calculate fuel cost, MPG, HP, Fuel remaining and more.
-- Before you set up a profile, I recommend setting up which unit measurements you want to use first. To do this press the settings button on the bottom left of the screen – Select Settings – Then Units – Then tick or un-tick the boxes as necessary.
+-The top left-hand corner you have 4 blue icons. The left one is GPS it will flash until you get GPS lock on. The next icon across is just to show that the app is running.
+-The next is an icon to show status of connection to the ELM327 OBD device. Flashing = Not connected and Solid Blue = Connected.
+-The right-hand icon is connection to the car&#39;s ECU, for this the ignition needs to be on and then same as before. Flashing = Not connected and Solid Blue = Connected.
+-Although not necessary, you need to set up a profile for Torque to correctly calculate fuel cost, MPG, HP, Fuel remaining and more.
+-Before you set up a profile, I recommend setting up which unit measurements you want to use first. To do this press the settings button on the bottom left of the screen – Select Settings – Then Units – Then tick or un-tick the boxes as necessary.
 
-- Now you are ready to set up a profile. Go back to the first screen and again press the settings button on the bottom left – Select Vehicle Profile – Create New Profile- Then fill in the boxes with details about your car.
-- Now let&#39;s select the sensor data we need to capture. For that go to Settings and select &#39;Data Logging and Upload&#39; and in that &#39;Select What to Log&#39;. You can select the sensor data to be recorded from the three dots menu on the top right corner.
-- Here is the list of sensors that needs to be selected
+-Now you are ready to set up a profile. Go back to the first screen and again press the settings button on the bottom left – Select Vehicle Profile – Create New Profile- Then fill in the boxes with details about your car.
+-Now let&#39;s select the sensor data we need to capture. For that go to Settings and select &#39;Data Logging and Upload&#39; and in that &#39;Select What to Log&#39;. You can select the sensor data to be recorded from the three dots menu on the top right corner.
+-Here is the list of sensors that needs to be selected
 
-- GPS Time
-- Device Time
-- Longitude
+-GPS Time
+-Device Time
+-Longitude
 - Latitude
 - GPS Speed (Meters/second)
 - Altitude
