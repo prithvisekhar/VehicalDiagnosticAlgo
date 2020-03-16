@@ -1,6 +1,6 @@
 # Load Analysis
 Analyzing whether the engine is working under the rated load level or exceeding
-the recommended values.
+the recommended values
 
 ## Input 
 - Engine Load(%)
