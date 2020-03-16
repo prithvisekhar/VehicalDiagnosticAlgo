@@ -45,94 +45,93 @@ Aim: To use OBD adapter to record and share necessary data.
 -GPS Time
 -Device Time
 -Longitude
-- Latitude
-- GPS Speed (Meters/second)
-- Altitude
-- G(x)
-- G(y)
-- G(z)
-- G(calibrated)
-- Absolute Throttle Position B (%)
-- Acceleration Sensor (Total)(g)
-- Acceleration Sensor (X axis) (g)
-- Acceleration Sensor (Y axis) (g)
-- Acceleration Sensor (Z axis) (g)
-- Accelerator Pedal Position D (%)
-- Accelerator Pedal Position E(%)
-- Accelerator PedalPosition F(%)
-- Actual engine % torque(%)
-- Air Fuel Ratio(Commanded)(:1)
-- Ambient air temp(Â°C)
-- Average trip speed(whilst moving only)(km/h)
-- Average trip speed(whilst stopped or moving)(km/h)
-- Barometric pressure (from vehicle)(psi)
-- COâ‚‚ in g/km (Average)(g/km)
-- DPF Pressure(psi)
-- DPF Temperature(Â°C)
-- Engine Coolant Temperature(Â°C)
-- Engine kW (At the wheels)(kW)
-- Engine Load(%)
-- Engine Load(Absolute)(%)
-- Engine Oil Temperature(Â°C)
-- Engine reference torque(Nm)
-- Engine RPM(rpm)
-- Fuel flow rate/hour(gal/hr)
-- Fuel flow rate/minute(gal/min)
-- Fuel Remaining (Calculated from vehicle profile)(%)
-- GPS Accuracy(m)
-- GPS Altitude(m)
-- GPS Bearing(Â°)
-- GPS Latitude(Â°)
-- GPS Longitude(Â°)
-- GPS Satellites        
-- GPS vs OBD Speed difference(km/h)
-- Horsepower (At the wheels)(hp)
-- Intake Air Temperature(Â°C)
-- Intake Manifold Pressure(psi)
-- O2 Volts Bank 1 sensor 1(V)
-- O2 Volts Bank 1 sensor 2(V)
-- Relative Throttle Position(%)
-- Run time since engine start(s)
-- Speed (GPS)(km/h)
-- Speed (OBD)(km/h)
-- Throttle Position(Manifold)(%)
-- Timing Advance(Â°)
-- Torque(Nm)
-- Trip average KPL(kpl)
-- Trip average Litres/100 KM(l/100km)
-- Trip average MPG(mpg)
-- Trip Distance(km)
-- Trip Time(Since journey start)(s)
-- Trip time(whilst moving)(s)
-- Trip time(whilst stationary)(s)
-- Turbo Boost &amp; Vacuum Gauge(psi)
-- Turbo Pressure Control(psi)
-- Voltage (Control Module)(V)
-- Voltage (OBD Adapter)(V)
-- Volumetric Efficiency (Calculated)(%)
+-Latitude
+-GPS Speed (Meters/second)
+-Altitude
+-G(x)
+-G(y)
+-G(z)
+-G(calibrated)
+-Absolute Throttle Position B (%)
+-Acceleration Sensor (Total)(g)
+-Acceleration Sensor (X axis) (g)
+-Acceleration Sensor (Y axis) (g)
+-Acceleration Sensor (Z axis) (g)
+-Accelerator Pedal Position D (%)
+-Accelerator Pedal Position E(%)
+-Accelerator PedalPosition F(%)
+-Actual engine % torque(%)
+-Air Fuel Ratio(Commanded)(:1)
+-Ambient air temp(Â°C)
+-Average trip speed(whilst moving only)(km/h)
+-Average trip speed(whilst stopped or moving)(km/h)
+-Barometric pressure (from vehicle)(psi)
+-COâ‚‚ in g/km (Average)(g/km)
+-DPF Pressure(psi)
+-DPF Temperature(Â°C)
+-Engine Coolant Temperature(Â°C)
+-Engine kW (At the wheels)(kW)
+-Engine Load(%)
+-Engine Load(Absolute)(%)
+-Engine Oil Temperature(Â°C)
+-Engine reference torque(Nm)
+-Engine RPM(rpm)
+-Fuel flow rate/hour(gal/hr)
+-Fuel flow rate/minute(gal/min)
+-Fuel Remaining (Calculated from vehicle profile)(%)
+-GPS Accuracy(m)
+-GPS Altitude(m)
+-GPS Bearing(Â°)
+-GPS Latitude(Â°)
+-GPS Longitude(Â°)
+-GPS Satellites        
+-GPS vs OBD Speed difference(km/h)
+-Horsepower (At the wheels)(hp)
+-Intake Air Temperature(Â°C)
+-Intake Manifold Pressure(psi)
+-O2 Volts Bank 1 sensor 1(V)
+-O2 Volts Bank 1 sensor 2(V)
+-Relative Throttle Position(%)
+-Run time since engine start(s)
+-Speed (GPS)(km/h)
+-Speed (OBD)(km/h)
+-Throttle Position(Manifold)(%)
+-Timing Advance(Â°)
+-Torque(Nm)
+-Trip average KPL(kpl)
+-Trip average Litres/100 KM(l/100km)
+-Trip average MPG(mpg)
+-Trip Distance(km)
+-Trip Time(Since journey start)(s)
+-Trip time(whilst moving)(s)
+-Trip time(whilst stationary)(s)
+-Turbo Boost &amp; Vacuum Gauge(psi)
+-Turbo Pressure Control(psi)
+-Voltage (Control Module)(V)
+-Voltage (OBD Adapter)(V)
+-Volumetric Efficiency (Calculated)(%)
+-Most of them are by default selected. This is a one-time operation.
+-Next comes the sharing of the recorded data. For this, we have to go back to the &#39;Data logging and Upload&#39;. Select &#39;User Email Address&#39;. This email address will be used to send the logged data every time we command it to.
+-The rest of the settings can be explored but mostly they are left by default.
 
-- Most of them are by default selected. This is a one-time operation.
-- Next comes the sharing of the recorded data. For this, we have to go back to the &#39;Data logging and Upload&#39;. Select &#39;User Email Address&#39;. This email address will be used to send the logged data every time we command it to.
-- The rest of the settings can be explored but mostly they are left by default.
-
-- Right, let&#39;s go back to the first screen and this time we go into &#39;Real-time Information&#39;. This brings up a set of six gauges, but if you swipe left, right, up or down, depending on which way you&#39;re holding the screen it reveals more gauges.
-- These are fully customizable. Anything from style and size, to what data they display can be changed.
-- Press and hold a blank area of screen and you will have the option to &#39;Add a Display&#39; Here you select the type of gauge you want, then what data you want it to show, then the size.
-- Press and hold a gauge that&#39;s already on the screen and it bring up, the customization menu.
-- When everything is setup and ready to log data, click the gear icon on the bottom left corner and start logging the data.
-- After the trip ends, stop the logging and email logs. Reset the trip counters so that the next trip starts from zero.
-- OK that about sums up what you should do to get started with Torque for Android.
-- Back at the first screen if all 4 icons are blue and have stopped flashing, you&#39;re ready to begin.
+-Right, let&#39;s go back to the first screen and this time we go into &#39;Real-time Information&#39;. This brings up a set of six gauges, but if you swipe left, right, up or down, depending on which way you&#39;re holding the screen it reveals more gauges.
+-These are fully customizable. Anything from style and size, to what data they display can be changed.
+-Press and hold a blank area of screen and you will have the option to &#39;Add a Display&#39; Here you select the type of gauge you want, then what data you want it to show, then the size.
+-Press and hold a gauge that&#39;s already on the screen and it bring up, the customization menu.
+-When everything is setup and ready to log data, click the gear icon on the bottom left corner and start logging the data.
+-After the trip ends, stop the logging and email logs. Reset the trip counters so that the next trip starts from zero.
+-OK that about sums up what you should do to get started with Torque for Android.
+-Back at the first screen if all 4 icons are blue and have stopped flashing, you&#39;re ready to begin.
 
 ## Important Tips:
 
-1. Start Logging data after the ignition.
-2. Make sure the phone stays connected to the internet at all time when logging data. If not, it can tamper the accuracy of data (most importantly GPS data).
-3. Make sure not to keep the phone on low power mode while logging data. The reason is the same as the above, it can capture inaccurate data.
-4. Reset trip Counters for every log. (End of current trip or start of the next trip)
-5. Email the datasets as soon as the trip ends.
+1.Start Logging data after the ignition.
+2.Make sure the phone stays connected to the internet at all time when logging data. If not, it can tamper the accuracy of data (most importantly GPS data).
+3.Make sure not to keep the phone on low power mode while logging data. The reason is the same as the above, it can capture inaccurate data.
+4.Reset trip Counters for every log. (End of current trip or start of the next trip)
+5.Email the datasets as soon as the trip ends.
 
 ## Additional Resources:
 
-- Torque Pro Application Setup [https://www.youtube.com/watch?v=Es5sDrVRyuI](https://www.youtube.com/watch?v=Es5sDrVRyuI)
-- Video Plugin [https://www.youtube.com/watch?v=w4yvA9gZON8](https://www.youtube.com/watch?v=w4yvA9gZON8)
+-Torque Pro Application Setup [https://www.youtube.com/watch?v=Es5sDrVRyuI](https://www.youtube.com/watch?v=Es5sDrVRyuI)
+-Video Plugin [https://www.youtube.com/watch?v=w4yvA9gZON8](https://www.youtube.com/watch?v=w4yvA9gZON8)
