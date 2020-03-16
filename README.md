@@ -16,8 +16,8 @@ In India, it is observed that more than 50% of the accidents occur due to bad ro
 
 We can sort these issues into two categories:
 
-- Road anomalies
-- Driver and Vehicle behavior
+-   Road anomalies
+-   Driver and Vehicle behavior
 
 Road anomalies can include potholes, speed-breakers or just any other abnormality on roads.
 
@@ -33,17 +33,17 @@ Accelerometer data combined with driving style analysis or drive cycles can be o
 
 The idea not only serves the purpose of detection of, but has several other possible applications:
 
--   Driver applications
-  -  Fuel efficiency
-  -  Proximity of routes (point A to B)
-  -  Drive cycles
--   Government applications
-  -  Traffic violations
-  -  Road health
-  -  Road emergencies
--   Vehicle applications
-  -  Fleet management
-  -  Vehicle wear and tear
--   Allied services
-  -  Insurance services (Based on drive cycles)
-  -  Access to SOS – (Emergency and Breakdown)
+-  Driver applications
+-   Fuel efficiency
+-   Proximity of routes (point A to B)
+-   Drive cycles
+-  Government applications
+-   Traffic violations
+-   Road health
+-   Road emergencies
+-  Vehicle applications
+-   Fleet management
+-   Vehicle wear and tear
+-  Allied services
+-   Insurance services (Based on drive cycles)
+-   Access to SOS – (Emergency and Breakdown)
