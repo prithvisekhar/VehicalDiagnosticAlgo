@@ -33,17 +33,17 @@ Accelerometer data combined with driving style analysis or drive cycles can be o
 
 The idea not only serves the purpose of detection of, but has several other possible applications:
 
-- Driver applications
-  - Fuel efficiency
-  - Proximity of routes (point A to B)
-  - Drive cycles
-- Government applications
-  - Traffic violations
-  - Road health
-  - Road emergencies
-- Vehicle applications
-  - Fleet management
-  - Vehicle wear and tear
-- Allied services
-  - Insurance services (Based on drive cycles)
-  - Access to SOS – (Emergency and Breakdown)
+-   Driver applications
+  -   Fuel efficiency
+  -   Proximity of routes (point A to B)
+  -   Drive cycles
+-   Government applications
+  -   Traffic violations
+  -   Road health
+  -   Road emergencies
+-   Vehicle applications
+  -   Fleet management
+  -   Vehicle wear and tear
+-   Allied services
+  -   Insurance services (Based on drive cycles)
+  -   Access to SOS – (Emergency and Breakdown)
