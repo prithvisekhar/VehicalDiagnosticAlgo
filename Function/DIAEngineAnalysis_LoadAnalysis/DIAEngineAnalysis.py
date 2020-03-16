@@ -54,7 +54,7 @@ def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 
 		if EngineLoad[i] > LoadThreshold and  EngineRPM[i] > RPMThreshold:
 			TempCounterOverload = TempCounterOverload + 1 # Checking whether engine load and engine rpm are less than threshold
-		CounterOverload.append(temp_CounterOverload)
+		CounterOverload.append(TempCounterOverload)
 
 		VehicleSpeed[i] = float(VehicleSpeed[i])
 
