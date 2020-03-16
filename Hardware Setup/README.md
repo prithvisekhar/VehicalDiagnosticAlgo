@@ -4,8 +4,8 @@ Aim: To use OBD adapter to record and share necessary data.
 
 ## Prerequisites
 
-1. OBD Adapter
-2. Torque Pro Android Application
+1.OBD Adapter
+2.Torque Pro Android Application
 
 ## Procedure
 
