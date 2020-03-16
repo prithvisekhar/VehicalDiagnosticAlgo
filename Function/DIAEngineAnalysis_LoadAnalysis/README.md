@@ -8,4 +8,4 @@ the recommended values.
 - Speed (GPS)(km/h)
 
 ## Output
-- Engine is overloaded or not with respect to Engine Load, engine RPM, and Speed.
+- Engine is overloaded or not with respect to Engine Load, engine RPM, and Speed
