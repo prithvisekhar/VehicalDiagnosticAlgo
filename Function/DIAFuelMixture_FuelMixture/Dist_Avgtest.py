@@ -3,7 +3,6 @@ import DistAvg
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-import numpy as np
 
 class TestDistAvg(unittest.TestCase):
 	def testDistAvg(self):
