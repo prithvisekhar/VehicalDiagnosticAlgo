@@ -6,8 +6,6 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/850d420d714c4c5a899b0de26e00b09d)](https://www.codacy.com/manual/prithvisekhar/VehicalDiagnosticAlgo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prithvisekhar/VehicalDiagnosticAlgo&amp;utm_campaign=Badge_Grade)
 
-[![codecov](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo/branch/master/graph/badge.svg)](https://codecov.io/gh/prithvisekhar/VehicalDiagnosticAlgo)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/4fa4a36a9eaf145944ac/maintainability)](https://codeclimate.com/github/prithvisekhar/VehicalDiagnosticAlgo/maintainability)
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/prithvisekhar/VehicalDiagnosticAlgo?branch=master)](https://bettercodehub.com/)
