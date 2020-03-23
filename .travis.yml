@@ -28,6 +28,10 @@ script:
   - python Run_Pipline.py
   - bash Running_Function.sh
   - echo "Done Done"
+ 
+  
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 branches:
   only:
