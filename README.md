@@ -8,7 +8,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4fa4a36a9eaf145944ac/maintainability)](https://codeclimate.com/github/prithvisekhar/VehicalDiagnosticAlgo/maintainability)
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/prithvisekhar/VehicalDiagnosticAlgo?branch=master)](https://bettercodehub.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/prithvisekhar/VehicalDiagnosticAlgo?branch=master)](https://bettercodehub.com/results/prithvisekhar/VehicalDiagnosticAlgo)
 
 Some of the common road problems today include traffic, accidents and uneconomical driving styles.
 
