@@ -102,7 +102,7 @@ def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	EngineLoadThreshold=0.50*max(EngineLoad_np)
 	TripTimeThreshold = 0.50*max(TripTime_np)
 
-	for i in CoolantTemperatureF_np.index:
+	for i in range(0,CoolantTemperatureF_np.size):
 		if CoolantTemperatureF_np[i] > NormalTemperatureC and CoolantTemperatureF_np[i] < HighestTemperatureC:
 			if (TripTime_np[i] < TripTimeThreshold):
 				IndexTripTimeThreshold=i
