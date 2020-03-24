@@ -10,5 +10,5 @@ values of coolant temperature to check whether the system is running in the safe
 
 ## Output
 
--   Prints whether the system is running in safe state or not along with the plot of engine
-coolant temperature.
+-   Graph of Coolant temperature vs Index showing where the temperature has excedded.
+-   Graph Engine load vs Trip time.
