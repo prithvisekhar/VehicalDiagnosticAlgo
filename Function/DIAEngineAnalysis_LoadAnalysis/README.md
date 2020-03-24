@@ -6,6 +6,7 @@ the recommended values
 -   Engine Load(%)
 -   Engine RPM(rpm)
 -   Speed (GPS)(km/h)
+-   Trip Time
 
 ## Output
--   Engine is overloaded or not with respect to Engine Load, engine RPM, and Speed
+-   Graphs for engine is overloaded or not with respect to Engine Load, engine RPM, and Speed

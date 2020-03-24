@@ -8,12 +8,11 @@ of the system exceeded the permissible value.
 
 -   Longitude
 
--   GPS Time
-
 -   Speed (GPS)(km/h)
+
+-   Speed Limit
 
 ## Output
  
--   Speed
+-   Graph showing the instances where the speed limit is voilated.
 
--   Index
