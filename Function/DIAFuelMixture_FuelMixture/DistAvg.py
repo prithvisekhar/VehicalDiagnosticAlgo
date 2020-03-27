@@ -1,6 +1,3 @@
-# logic : Total Fuel is taken at the starting then the mileage is taken till that point. Using the mileage on the remaining
-# Fuel the expected Distanceance is calculated and plotted.
-
 def AverageDistance(Distance, Fuel, Kmpl):
     ExpectedDistance = []
     TotalDistance = Distance.iloc[-1]
@@ -20,5 +17,3 @@ def AverageDistance(Distance, Fuel, Kmpl):
     print('Expected Distance', TempExpectedDistance)
     DistanceToZero = pd.DataFrame(data=ExpectedDistance, columns=['DistanceToZero', 'Index'])
     return DistanceToZero
-
-
