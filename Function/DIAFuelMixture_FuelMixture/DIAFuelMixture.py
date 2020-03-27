@@ -17,7 +17,7 @@ def FuelMixture(O2_Volts):
             TempRich.append([O2_Volts[i], i])
         else:
             TempNrml.append([O2_Volts[i], i])
-    Lean = pd.DataFrame(data=TempLean,columns = ['O2_Volts', 'Index'])
-    Rich = pd.DataFrame(data=TempRich,columns = ['O2_Volts', 'Index'])
-    Nrml = pd.DataFrame(data=TempNrml,columns = ['O2_Volts', 'Index'])
+    Lean = pd.DataFrame(data=TempLean, columns=['O2_Volts', 'Index'])
+    Rich = pd.DataFrame(data=TempRich, columns=['O2_Volts', 'Index'])
+    Nrml = pd.DataFrame(data=TempNrml, columns=['O2_Volts', 'Index'])
     return Lean, Rich, Nrml
