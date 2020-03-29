@@ -1,7 +1,8 @@
 import pandas as pd
 from importlib.machinery import SourceFileLoader
 
-DIAEngineAnalysis = SourceFileLoader("LoadAnalysis", "../Function/DIAEngineAnalysis_Coolant/DIAEngineAnalysis.py").load_module()
+DIAEngineAnalysis = SourceFileLoader("LoadAnalysis",
+                                     "../Function/DIAEngineAnalysis/DIAEngineAnalysis.py").load_module()
 DIAFuelMixture = SourceFileLoader("FuelMixture", "../Function/DIAFuelMixture_FuelMixture/DIAFuelMixture.py").load_module()
 DIASpeedVoilation = SourceFileLoader("SpeedVoilation", "../Function/DIASpeedVoilation_SpeedVoilation/DIASpeedVoilation.py").load_module()
 
@@ -17,3 +18,4 @@ Lean, Rich, Nrml =DIAFuelMixture.FuelMixture(df['O2 Volts Bank 1 sensor 2(V)'])
 SpeedViolate=DIASpeedVoilation.SpeedVoilation(df["Speed (GPS)(km/h)"],df[' Latitude'],df[' Longitude'],20)
 
 
+ 
