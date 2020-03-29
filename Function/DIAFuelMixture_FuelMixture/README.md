@@ -8,4 +8,6 @@ less fuel) or rich (More fuel and less air)
 
 ## Output
  
--   Graphs showing instances where the mixture is lean, rich or normal.
+-   Count of instances when NOx emissions happened
+
+-   Count of instances when CO and HC emissions happened

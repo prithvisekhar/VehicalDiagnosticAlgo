@@ -16,7 +16,7 @@ class TestFuel_Mixture(unittest.TestCase):
 				TempFile3=TempFile1[-1].split('.')
 				TempFile4=str(TempFile3[0])
 				path=os.path.join("Result/" , TempFile4)
-				Lean, Rich, Nrml =DIAFuelMixture.FuelMixture(df['O2 Volts Bank 1 sensor 2(V)'])
+				Lean, Rich, Nrml =DIAFuelMixture.Fuel_Mixture(df['O2 Volts Bank 1 sensor 2(V)'])
 				TempO2Sensor=df['O2 Volts Bank 1 sensor 2(V)'].replace(to_replace='-',value=0)
 				plt.figure()
 				plt.plot(np.repeat(0.1,len(TempO2Sensor)),label='0.1')

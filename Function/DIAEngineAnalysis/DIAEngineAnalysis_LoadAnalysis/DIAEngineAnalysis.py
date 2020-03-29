@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+
 def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 	GearRatio = 1.5
 	AxleRatio = 4
@@ -20,10 +21,10 @@ def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 	TempCounterOverload=0
 
 	for i in EngineLoad.index:
-		if EngineLoad[i] == '-' :
+		"""if EngineLoad[i] == '-' :
 			EngineLoad[i] = '0';
 		if EngineRPM[i] == '-' :
-			EngineRPM[i] = '0';
+			EngineRPM[i] = '0';"""
 		EngineLoad[i] = float(EngineLoad[i])
 		EngineRPM[i] = float(EngineRPM[i])
 
@@ -56,7 +57,7 @@ def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 			TempCounterOverload = TempCounterOverload + 1 # Checking whether engine load and engine rpm are less than threshold
 		CounterOverload.append(TempCounterOverload)
 
-		VehicleSpeed[i] = float(VehicleSpeed[i])
+		#VehicleSpeed[i] = float(VehicleSpeed[i])
 
         #ACTUAL SPEED = (ENGINE RPM * PERIMETER OF TYRE)/(AXLE RATIO * GEAR RATIO)
 		ExpectedSpeed.append(0.4*(EngineRPM[i] *60*3.14*2 *TyreSize*25.4*0.000001)/(GearRatio*AxleRatio))
@@ -74,6 +75,8 @@ def LoadAnalysis(EngineLoad,EngineRPM,VehicleSpeed, TripTime):
 	VehicleSpeedMore = pd.DataFrame(data=TempVehicleSpeedMore, columns=['VehicleSpeed','Index'])
 
 	return EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore, VehicleSpeedLess, VehicleSpeedMore,ExpectedSpeed,LoadThreshold,RPMThreshold,CounterOverload
+
+"""Function checks the coolant temperature and compare it with the threshold. Returns Safestate or not."""
 
 def Coolant(CoolantTemperatureC,EngineLoad,TripTime):
 	State0=[]
