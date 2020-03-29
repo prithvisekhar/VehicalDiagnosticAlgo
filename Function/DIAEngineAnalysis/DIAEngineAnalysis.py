@@ -22,10 +22,6 @@ def LoadAnalysis(EngineLoad, EngineRPM, VehicleSpeed, TripTime):
 	TempCounterOverload = 0
 	
 	for i in EngineLoad.index:
-		if EngineLoad[i] == '-':
-			EngineLoad[i] = '0';
-		if EngineRPM[i] == '-':
-			EngineRPM[i] = '0';
 		EngineLoad[i] = float(EngineLoad[i])
 		EngineRPM[i] = float(EngineRPM[i])
 		
