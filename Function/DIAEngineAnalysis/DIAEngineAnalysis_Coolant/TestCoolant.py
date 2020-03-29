@@ -22,18 +22,12 @@ class TestCoolant_Temperature(unittest.TestCase):
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
 
-                (CoolantTemperatureF_np, HighestTemperatureC, NormalTemperatureC, LowestTemperatureC,
-                 SafeState1, SafeState2, SafeState3, State0, IndexTripTimeThreshold,
-                 EngineLoadThreshold) = DIAEngineAnalysis.Coolant(
-                    df['Engine Coolant Temperature(°C)'].replace(
-                        to_replace="-", value="0"),
-                    df['Engine Load(%)'].replace(
-                        to_replace="-", value="0"),
-                    df['Trip Time(Since journey start)(s)'].replace(
-                        to_replace="-", value="0"))
+                CoolantTemperatureF_np, HighestTemperatureC, NormalTemperatureC, LowestTemperatureC, SafeState1, SafeState2, SafeState3, State0, IndexTripTimeThreshold, EngineLoadThreshold = DIAEngineAnalysis.Coolant(
+                    df['Engine Coolant Temperature(°C)'].replace(to_replace="-", value="0"),
+                    df['Engine Load(%)'].replace(to_replace="-", value="0"),
+                    df['Trip Time(Since journey start)(s)'].replace(to_replace="-", value="0"))
 
-                TempEngineLoad = df['Engine Load(%)'].replace(
-                    to_replace="-", value="0")
+                TempEngineLoad = df['Engine Load(%)'].replace(to_replace="-", value="0")
                 TempEngineLoad_np = np.asarray(TempEngineLoad)
                 TempEngineLoad_np = TempEngineLoad_np.astype(float)
 
