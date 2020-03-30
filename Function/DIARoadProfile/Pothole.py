@@ -1,44 +1,26 @@
-# Pothole
-# Insalation
-# pip3 install peakutils 
-# pip3 install gmplot
-
 import pandas as pd
-import peakutils 
-from peakutils.plot import plot as pplot
-import matplotlib.pyplot as plt
 import numpy as np
+import peakutils
 
 
-#def pothole(Accx,Accy,Accz)
-df_File = pd.read_csv("../../Datasets/Dataset-1.csv")
-time = df_File['Trip Time(Since journey start)(s)']
-
-Accx = df_File['Acceleration Sensor(X axis)(g)']
-Accy = df_File['Acceleration Sensor(Y axis)(g)']
-Accz = df_File['Acceleration Sensor(Z axis)(g)']
-Lat = df_File[' Latitude']
-Longi = df_File[' Longitude']
-
-x = np.array(time)
-y = np.array(Accy)
-indexes = peakutils.indexes(-y, thres=0.9, min_dist=10)
+def mean_rolling(List_name):
+    chunks = [List_name[i:i + 2] for i in range(0, len(List_name), 2)]
+    d = []
+    for i in chunks:
+        s = 0
+        for j in i:
+            s += j / 2
+        d.append(s)
+    return d
 
 
-#c=data.Accy<-0.1
-#data[c]
+def PotholeDetection(time, acc_y, lat, long):
+    Lat_Long = []
+    x = time  # np.array(data['Trip Time(Since journey start)(s)'])
+    y = acc_y  # np.array(data['Acceleration Sensor(Y axis)(g)'])
+    indexes = peakutils.indexes(-y, thres=0.9, min_dist=10)
 
-#print(indexes)
-#print(x[indexes], y[indexes])
-plt.figure(figsize=(10,6))
-pplot(x,y,indexes)
-plt.title('Number of severe-potholes')
-plt.xlabel('Time')
-plt.ylabel('Acceleration in the y direction')
-plt.show()
-
-#lati = [13.027313,13.026308,13.025118,13.023361,13.028859,13.033193,13.036492 ]
-#long = [77.577713,77.580344,77.581661,77.584423,77.586206,77.588136,77.589162 ]
-#gmap = gmplot.GoogleMapPlotter(12.9716,77.5946, 13)
-#gmap.scatter(lati, long,'yellow',size = 10, marker = False) 
-#gmap.draw("Potholes.html")
+    for i in indexes:
+        Lat_Long.append([lat[i], long[i], i])
+    PotholeDetection = pd.DataFrame(data=Lat_Long, columns=['Latitude', 'Longitude', 'Index'])
+    return PotholeDetection
