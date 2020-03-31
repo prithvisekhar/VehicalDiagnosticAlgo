@@ -18,9 +18,11 @@ class TestTraffic(unittest.TestCase):
                 path = os.path.join("Result/", t4)
                 os.mkdir(path)
                 # os.chdir(path)
-                df["Speed (GPS)(km/h)"] = df["Speed (GPS)(km/h)"].astype("float")
-                HC, MC, LC = Traffic.traffic(df["Speed (GPS)(km/h)"].replace(to_replace='-', value=0), df[' Latitude'],
-                                             df[' Longitude'])
+                df["Speed (GPS)(km/h)"] = \
+                    df["Speed (GPS)(km/h)"].astype("float")
+                HC, MC, LC = Traffic.traffic(
+                    df["Speed (GPS)(km/h)"].replace('-', 0),
+                    df[' Latitude'], df[' Longitude'])
                 t = df["Speed (GPS)(km/h)"]
                 t2 = t.replace(to_replace='-', value=0)
                 plt.figure(1)
