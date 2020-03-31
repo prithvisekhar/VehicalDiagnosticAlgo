@@ -1,5 +1,4 @@
 import unittest
-import DIAEngineAnalysis
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,18 +22,24 @@ class TestLoad_Analysis(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                if not os.path.isdir(path):
-                    os.mkdir(path)
-                EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore, VehicleSpeedLess, VehicleSpeedMore, ExpectedSpeed, LoadThreshold, RPMThreshold, CounterOverload = DIAEngineAnalysis.LoadAnalysis(
+
+                EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore,\
+                VehicleSpeedLess, VehicleSpeedMore, ExpectedSpeed,\
+                LoadThreshold,RPMThreshold,\
+                CounterOverload = DIAEngineAnalysis.LoadAnalysis(
                     df["Engine Load(%)"].replace(to_replace="-", value="0"),
                     df["Engine RPM(rpm)"].replace(to_replace="-", value="0"),
-                    df['Speed (GPS)(km/h)'].replace(to_replace="-", value="0"), df['Trip Time(Since journey start)(s)'])
-                TempEngineLoad1 = df["Engine Load(%)"].replace(to_replace='-', value=0)
+                    df['Speed (GPS)(km/h)'].replace(to_replace="-", value="0"),
+                    df['Trip Time(Since journey start)(s)'])
+                TempEngineLoad1 = df["Engine Load(%)"].replace('-', value = 0)
                 plt.figure(1)
                 plt.plot(TempEngineLoad1, marker='o', label='Engine Load')
-                plt.plot(EngineLoadLess['Index'], EngineLoadLess['EngineLoad'], 'g.')
-                plt.plot(EngineLoadMore['Index'], EngineLoadMore['EngineLoad'], 'r.')
-                plt.plot(np.repeat(LoadThreshold, len(TempEngineLoad1)),
+                plt.plot(EngineLoadLess['Index'],
+                         EngineLoadLess['EngineLoad'], 'g.')
+                plt.plot(EngineLoadMore['Index'],
+                         EngineLoadMore['EngineLoad'], 'r.')
+                plt.plot(np.repeat(LoadThreshold,
+                                   len(TempEngineLoad1)),
                          label='Threshold = ' + str(round(LoadThreshold)))
                 plt.plot(CounterOverload, label='Counter Overload *10')
                 plt.ylabel('Engine Load(%)')
@@ -44,11 +49,13 @@ class TestLoad_Analysis(unittest.TestCase):
                 plt.savefig(path + "/Engine_Load.png")
                 plt.close()
                 plt.figure(2)
-                TempSpeed = df['Speed (GPS)(km/h)'].replace(to_replace='-', value=0)
+                TempSpeed = df['Speed (GPS)(km/h)'].replace('-', value = 0)
                 plt.plot(TempSpeed, marker='o', label='Speed')
                 plt.plot(ExpectedSpeed, label='Expected Speed *0.4')
-                plt.plot(VehicleSpeedLess['Index'], VehicleSpeedLess['VehicleSpeed'], 'g.')
-                plt.plot(VehicleSpeedMore['Index'], VehicleSpeedMore['VehicleSpeed'], 'r.')
+                plt.plot(VehicleSpeedLess['Index'],
+                         VehicleSpeedLess['VehicleSpeed'], 'g.')
+                plt.plot(VehicleSpeedMore['Index'],
+                         VehicleSpeedMore['VehicleSpeed'], 'r.')
                 plt.ylabel('Speed (GPS)(km/h)')
                 plt.title("Speed")
                 plt.xlabel('Index')
@@ -56,12 +63,15 @@ class TestLoad_Analysis(unittest.TestCase):
                 plt.savefig(path + "/Vehicle_Speed" + '.png')
                 plt.close()
 
-                TempEngineRPM1 = df["Engine RPM(rpm)"].replace(to_replace='-', value=0)
+                TempEngineRPM1 = df["Engine RPM(rpm)"].replace('-', value = 0)
                 plt.figure(3)
                 plt.plot(TempEngineRPM1, marker='o', label='Engine RPM')
-                plt.plot(EngineRPMLess['Index'], EngineRPMLess['EngineRPM'], 'g.')
-                plt.plot(EngineRPMMore['Index'], EngineRPMMore['EngineRPM'], 'r.')
-                plt.plot(np.repeat(RPMThreshold, len(TempEngineRPM1)), label='Threshold = ' + str(round(LoadThreshold)))
+                plt.plot(EngineRPMLess['Index'],
+                         EngineRPMLess['EngineRPM'], 'g.')
+                plt.plot(EngineRPMMore['Index'],
+                         EngineRPMMore['EngineRPM'], 'r.')
+                plt.plot(np.repeat(RPMThreshold, len(TempEngineRPM1)),
+                         label='Threshold = ' + str(round(LoadThreshold)))
                 for x in CounterOverload:
                     TempCounterOverload.append(x * 10)
                 plt.plot(TempCounterOverload, label='Counter Overload')
