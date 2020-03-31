@@ -14,8 +14,9 @@ class TestSpeed_Voilation(unittest.TestCase):
             for i in df_File.index:
                 df = pd.read_csv(str(df_File["Input_File_Name"][i]))
                 SpeedViolate = DIASpeedVoilation.SpeedVoilation(
-                    df["Speed (GPS)(km/h)"].replace(to_replace='-', value=0), df[' Latitude'], df[' Longitude'], 20)
-                TempSpeed = df["Speed (GPS)(km/h)"].replace(to_replace='-', value=0)
+                    df["Speed (GPS)(km/h)"].replace(to_replace='-', value=0),
+                    df[' Latitude'], df[' Longitude'], 20)
+                TempSpeed = df["Speed (GPS)(km/h)"].replace('-', value=0)
                 plt.figure()
                 plt.plot(TempSpeed, marker='o')
                 plt.plot(SpeedViolate['Index'], SpeedViolate['Speed'], 'ro')
