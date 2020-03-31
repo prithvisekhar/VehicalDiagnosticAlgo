@@ -1,4 +1,8 @@
 import os
+import unittest
+import pandas as pd
+import DIAFuelMixture
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -14,8 +18,10 @@ class TestFuel_Mixture(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                Lean, Rich, Nrml = DIAFuelMixture.Fuel_Mixture(df['O2 Volts Bank 1 sensor 2(V)'].replace('-', 0))
-                TempO2Sensor = df['O2 Volts Bank 1 sensor 2(V)'].replace(to_replace='-', value=0)
+                Lean, Rich, Nrml = DIAFuelMixture.Fuel_Mixture\
+                    (df['O2 Volts Bank 1 sensor 2(V)'].replace('-', 0))
+                TempO2Sensor = df['O2 Volts Bank 1 sensor 2(V)'
+                ].replace(to_replace='-', value=0)
                 plt.figure()
                 plt.plot(np.repeat(0.1, len(TempO2Sensor)), label='0.1')
                 plt.plot(np.repeat(0.0, len(TempO2Sensor)), label='0.0')
@@ -24,7 +30,8 @@ class TestFuel_Mixture(unittest.TestCase):
                 plt.plot(TempO2Sensor, marker='o', label='O2 Bank1')
                 plt.plot(Lean['Index'], Lean['O2_Volts'], 'r.', label='Lean')
                 plt.plot(Rich['Index'], Rich['O2_Volts'], 'y.', label='Rich')
-                plt.plot(Nrml['Index'], Nrml['O2_Volts'], 'g.', label='Normal')
+                plt.plot(Nrml['Index'], Nrml['O2_Volts'], 'g.',
+                         label='Normal')
                 plt.title("Fuel Mixture")
                 plt.ylabel('O2 in Volts')
                 plt.xlabel('Index')
