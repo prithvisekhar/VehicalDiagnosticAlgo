@@ -17,20 +17,26 @@ def traffic(SPEED, latitude, longitude):
     for i in range(0, A):
         if SPEED[i] < 10.00:
             HIGH_CONGESTION_COUNT += 1
-            HIGH_CONGESTION_LOC.append([latitude[i], longitude[i], SPEED[i], i])
-            HighCongestion = pd.DataFrame(data=HIGH_CONGESTION_LOC, columns=['Latitude', 'Longitude', 'Speed', 'Index'])
+            HIGH_CONGESTION_LOC.append([latitude[i], longitude[i],
+                                        SPEED[i], i])
+            HighCongestion = pd.DataFrame(data=HIGH_CONGESTION_LOC, columns=[
+                'Latitude', 'Longitude', 'Speed', 'Index'])
         elif SPEED[i] < 20.00:
             MODERATE_CONGESTION_COUNT += 1
-            MODERATE_CONGESTION_LOC.append([latitude[i], longitude[i], SPEED[i], i])
+            MODERATE_CONGESTION_LOC.append([latitude[i], longitude[i],
+                                            SPEED[i], i])
             ModerateCongestion = pd.DataFrame(data=MODERATE_CONGESTION_LOC,
-                                              columns=['Latitude', 'Longitude', 'Speed', 'Index'])
+                        columns=['Latitude', 'Longitude', 'Speed', 'Index'])
         else:
             LOW_CONGESTION_COUNT += 1
-            LOW_CONGESTION_LOC.append([latitude[i], longitude[i], SPEED[i], i])
-            LowCongestion = pd.DataFrame(data=LOW_CONGESTION_LOC, columns=['Latitude', 'Longitude', 'Speed', 'Index'])
+            LOW_CONGESTION_LOC.append([latitude[i], longitude[i],
+                                       SPEED[i], i])
+            LowCongestion = pd.DataFrame(data=LOW_CONGESTION_LOC,
+                        columns=['Latitude', 'Longitude', 'Speed', 'Index'])
     print("No. Of High Congestion Areas:%.2f" % HIGH_CONGESTION_COUNT)
     print("No. Of Moderate Congestion Areas:%.2f" % MODERATE_CONGESTION_COUNT)
     print("No. Of Low Congestion Areas:%.2f" % LOW_CONGESTION_COUNT)
     print()
     return HighCongestion, ModerateCongestion, LowCongestion
+
 
