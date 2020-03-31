@@ -1,5 +1,5 @@
 import unittest
-import DIA_Pothole
+import DIAPothole
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
@@ -17,14 +17,14 @@ class Test_Pothole(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                Location = DIA_Pothole.PotholeDetection(
-                    df['Trip Time(Since journey start)(s)'].replace(to_replace='-', value=0),
-                    df['Acceleration Sensor(Y axis)(g)'].replace(to_replace='-', value=0), df['Latitude'],
+                Location = DIAPothole.PotholeDetection(
+                    df['Trip Time(Since journey start)(s)'].replace('-', 0),
+                    df['Acceleration Sensor(Y axis)(g)'].replace('-', 0),
+                    df[' Latitude'],
                     df[' Longitude'])
-
-                # TempO2Sensor=df['O2 Volts Bank 1 sensor 2(V)'].replace(to_replace='-',value=0)
                 plt.figure()
-                plt.plot(Location['Latitude'], Location['Longitude'], 'r.', label='Lean')
+                plt.plot(Location['Latitude'], Location['Longitude'], 'r.',
+                         label='Lean')
 
                 plt.title("Pot Holes")
                 plt.ylabel('Longitude')
