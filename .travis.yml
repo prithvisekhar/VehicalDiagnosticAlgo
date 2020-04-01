@@ -18,6 +18,7 @@ install:
 
 
 script:
+  - echo $CC_TEST_REPORTER_ID
   - git log -1 --pretty=format:'%an'
   - git log -1 
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
