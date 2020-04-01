@@ -28,6 +28,7 @@ script:
   - bash Coverage_Function.sh
   - echo "Done Done"
   - cd ..
+  - git add -p
  
   
 
@@ -50,9 +51,9 @@ deploy:
     branch: master
     
 after_deploy:
-  - git add -p
-  - git commit -m "Updating Execution"
-  - git push
+  branches: master
+    - git commit -m "Updating Execution"
+    - git push
 
     
 
