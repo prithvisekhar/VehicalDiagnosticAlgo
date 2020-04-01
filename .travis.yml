@@ -39,18 +39,17 @@ after_success:
 
 
 deploy:
-  provider: script
-  script: bash scripts/deploy.sh
+  provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
     branch: master
     
-#after_deploy:
-#  - git add Testing
-#  - git commit -m "Updating Execution"
-#  - git push
+after_deploy:
+  - git add Testing
+  - git commit -m "Updating Execution"
+  - git push
 
     
 
