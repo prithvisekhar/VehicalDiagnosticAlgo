@@ -47,6 +47,7 @@ deploy:
   keep_history: true
   on:
     branch: gh-pages
+    tags: true
     
 after_deploy:
   - git push origin master
