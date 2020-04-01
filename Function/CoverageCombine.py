@@ -9,7 +9,7 @@ FilePaths=' '
 for x in FileNames:
 	if os.path.isfile(x+"/.coverage"):
 		FilePaths= FilePaths+ x +"/.coverage  "
-		#hf.write("git add -f "+x +"/.coverage  \n")
+		f.write("git add -f "+x +"/.coverage  \n")
 
 
 f.write("coverage combine "+FilePaths+ "\n")
