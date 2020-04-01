@@ -32,9 +32,7 @@ script:
   - git config user.name "John Doe"
   - git add -A
   - git commit -m "lkjlk"
-  - echo $email
-  - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
-   
+
 
 git:
   depth: 2
