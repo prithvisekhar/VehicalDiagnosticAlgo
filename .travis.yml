@@ -29,6 +29,7 @@ script:
   - echo "Done Done"
   - cd ..
   - git add -p
+  - echo klkj
  
   
 
