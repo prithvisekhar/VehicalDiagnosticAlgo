@@ -3,6 +3,7 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=ca2e2153c95d54b45acf92dc766b6722c2cfd1371e5500f8c7d58d2b753f857a
+    - email=`git log -1 --pretty=format:'%ae'`
     
 language: python
 python:
@@ -33,7 +34,6 @@ script:
   - git config user.name "John Doe"
   - git add -A
   - git commit -m "lkjlk"
-  - email=`git log -1 --pretty=format:'%ae'`
   - echo $email
  # - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
   - echo "hehehffgfgehhjjh"
