@@ -18,27 +18,24 @@ install:
   - pip install codeclimate-test-reporter
 
 
-jobs:
-  include:
-    if: branch = gh-pages
-  script:
-  `- export PYTHONPATH=$PYTHONPATH:$(pwd)
-   - pwd
-   - cd Function
-   - python Run_Pipline.py
-   - bash Running_Function.sh
-   - python CoverageCombine.py
-   - bash Coverage_Function.sh
-   - echo "Done Done"
-   - cd ..
-   - git add -A
-   - git commit -m "lkjlk"
+script:
+  - export PYTHONPATH=$PYTHONPATH:$(pwd)
+  - pwd
+  - cd Function
+  - python Run_Pipline.py
+  - bash Running_Function.sh
+  - python CoverageCombine.py
+  - bash Coverage_Function.sh
+  - echo "Done Done"
+  - cd ..
+  - git add -A
+  - git commit -m "lkjlk"
    
 
 
 branches:
   only:
-   - master
+   - gh-pages
 after_success:
 #    - coveralls
 #    - codecov
