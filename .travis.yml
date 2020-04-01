@@ -19,16 +19,17 @@ install:
 
   
 script:
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)
-  - pwd
-  - cd Function
-  - python Run_Pipline.py
-  - bash Running_Function.sh
-  - python CoverageCombine.py
-  - bash Coverage_Function.sh
-  - echo "Done Done"
-  - cd ..
-  - git add -p
+  branches: gh-pages
+    - export PYTHONPATH=$PYTHONPATH:$(pwd)
+    - pwd
+    - cd Function
+    - python Run_Pipline.py
+    - bash Running_Function.sh
+    - python CoverageCombine.py
+    - bash Coverage_Function.sh
+    - echo "Done Done"
+    - cd ..
+    - git add -p
  
   
 
