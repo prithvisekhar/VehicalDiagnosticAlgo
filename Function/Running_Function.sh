@@ -1,4 +1,4 @@
-cd DIASpeedVoilation_SpeedVoilation
+cd DIAFuelMixture_FuelMixture
 python Test*.py
 coverage run --source=.  Test*.py
 coverage report 
