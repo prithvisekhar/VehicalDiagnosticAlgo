@@ -24,6 +24,7 @@ script:
   - python CoverageCombine.py
   - bash Coverage_Function.sh
   - echo "Done Done"
+  - cd ..
  
   
 
