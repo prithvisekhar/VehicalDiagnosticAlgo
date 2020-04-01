@@ -40,13 +40,14 @@ after_success:
 
 
 deploy:
-  branches: master
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
-    branch: master
+    branch:
+      only:
+        - master
     
 after_deploy:
   - git push origin master
