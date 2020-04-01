@@ -52,8 +52,7 @@ deploy:
     branch: master
     
 after_deploy:
-  branches: master
-    - git push origin HEAD:gh-pages
+  - git push origin HEAD:gh-pages
 
 
     
