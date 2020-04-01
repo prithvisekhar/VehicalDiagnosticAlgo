@@ -48,7 +48,7 @@ deploy:
     branch: master
     
 after_deploy:
-  - git add -p
+  - git add .
   - git commit -m "Updating Execution"
   - git push
 
