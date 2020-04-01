@@ -1,5 +1,5 @@
-git:
-  depth: 2
+
+  
 env:
   global:
     - CC_TEST_REPORTER_ID=ca2e2153c95d54b45acf92dc766b6722c2cfd1371e5500f8c7d58d2b753f857a
@@ -31,7 +31,9 @@ script:
   - git commit -m "lkjlk"
    
 
-
+git:
+  depth: 2
+  
 branches:
   only:
    - gh-pages
