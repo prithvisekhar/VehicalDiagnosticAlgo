@@ -8,6 +8,7 @@ FilePaths=' '
 for x in FileNames:
 	if os.path.isfile(x+"/.coverage"):
 		FilePaths= FilePaths+ x +"/.coverage  "
+		f.write("git add "+x +"/.coverage  \n")
 	
 f.write("coverage combine "+FilePaths+ "\n")
 print("coverage combine "+FilePaths+ "\n")
