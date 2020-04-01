@@ -28,6 +28,8 @@ script:
   - bash Coverage_Function.sh
   - echo "Done Done"
   - cd ..
+  - git add .
+  - git commit -m "lkjlk"
  
   
 
@@ -50,9 +52,10 @@ deploy:
     branch: master
     
 after_deploy:
-  - git add .
-  - git commit -m "Updating Execution"
-  - git push origin HEAD:gh-pages
+  branches: master
+   # - git add .
+   # - git commit -m "Updating Execution"
+    - git push origin HEAD:gh-pages
 
 
     
