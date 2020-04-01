@@ -53,8 +53,6 @@ deploy:
     
 after_deploy:
   branches: master
-   # - git add .
-   # - git commit -m "Updating Execution"
     - git push origin HEAD:gh-pages
 
 
