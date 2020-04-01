@@ -34,7 +34,7 @@ script:
   - email=`git log -1 --pretty=format:'%ae'`
   - echo $email
   - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
-  - echo "hehehe"
+  - echo "heheh vfge"
 
    
 git:
