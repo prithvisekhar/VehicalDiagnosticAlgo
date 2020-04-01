@@ -39,7 +39,9 @@ after_success:
     
 
 deploy:
-  branches: master
+  branches: 
+    only:
+      - master
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
