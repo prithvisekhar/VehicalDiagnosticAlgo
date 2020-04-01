@@ -20,7 +20,7 @@ install:
   
 script:
   branches: gh-pages
-    - export PYTHONPATH=$PYTHONPATH:$(pwd)
+    #- export PYTHONPATH=$PYTHONPATH:$(pwd)
     - pwd
     - cd Function
     - python Run_Pipline.py
