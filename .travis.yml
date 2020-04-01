@@ -28,7 +28,7 @@ script:
   - bash Coverage_Function.sh
   - echo "Done Done"
   - cd ..
-  - git add -a
+  - git add -A
   - git commit -m "lkjlk"
  
   
