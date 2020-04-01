@@ -52,7 +52,7 @@ deploy:
 after_deploy:
   - git add -p
   - git commit -m "Updating Execution"
-  - git push origin gh-pages
+  - git push origin HEAD:gh-pages
 
     
 
