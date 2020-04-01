@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=ABC123
+    - CC_TEST_REPORTER_ID=ca2e2153c95d54b45acf92dc766b6722c2cfd1371e5500f8c7d58d2b753f857a
     
 language: python
 python:
@@ -8,18 +8,12 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install codecov
+  - pip install coverage==4.3
   - pip install pandas
   - pip install xlrd
   - pip install matplotlib
-    #For Coverage Report
-# command to run tests
+  - pip install codeclimate-test-reporter
 
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-  
   
 script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
@@ -27,11 +21,12 @@ script:
   - cd Function
   - python Run_Pipline.py
   - bash Running_Function.sh
+  - python CoverageCombine.py
+  - bash Coverage_Function.sh
   - echo "Done Done"
  
   
-after_script:
-  #- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
 
 branches:
   only:
