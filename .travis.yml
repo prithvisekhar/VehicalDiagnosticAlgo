@@ -17,19 +17,22 @@ install:
   - pip install matplotlib
   - pip install codeclimate-test-reporter
 
-  
-script:
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)
-  - pwd
-  - cd Function
-  - python Run_Pipline.py
-  - bash Running_Function.sh
-  - python CoverageCombine.py
-  - bash Coverage_Function.sh
-  - echo "Done Done"
-  - cd ..
-  - git add -A
-  - git commit -m "lkjlk"
+
+jobs:
+  include:
+    if: branch = gh-pages
+      script:
+        - export PYTHONPATH=$PYTHONPATH:$(pwd)
+        - pwd
+        - cd Function
+        - python Run_Pipline.py
+        - bash Running_Function.sh
+        - python CoverageCombine.py
+        - bash Coverage_Function.sh
+        - echo "Done Done"
+        - cd ..
+        - git add -A
+        - git commit -m "lkjlk"
  
   
 
