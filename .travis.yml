@@ -31,6 +31,9 @@ script:
   - git config user.name "John Doe"
   - git commit -m "lkjlk"
   - git log -1 --pretty=format:'%an'
+  - email=`git log -1 --pretty=format:'%ae'`
+  - echo $email
+  - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
 
    
 git:
