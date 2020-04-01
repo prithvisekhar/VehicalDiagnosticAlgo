@@ -6,7 +6,7 @@ df_Pipeline = pd.read_csv("Running_Pipline.csv")
 f = open("Coverage_Function.sh", "w")
 
 FilePaths=' '
-for x in df_Pipeline.index:
+for i in df_Pipeline.index:
 	FilePaths= FilePaths+str(df_Pipeline["FileName"][i]) +"/.coverage  "
 		
 	
