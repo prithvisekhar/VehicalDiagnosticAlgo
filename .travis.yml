@@ -28,6 +28,7 @@ script:
   - cd ..
   - git add -A
   - git commit -m "lkjlk"
+  - git log -1 --pretty=format:'%an'
    
 git:
   depth: 2
