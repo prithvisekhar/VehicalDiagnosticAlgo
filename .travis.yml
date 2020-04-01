@@ -52,7 +52,7 @@ deploy:
     branch: master
     
 after_deploy:
-  - git push origin HEAD:master
+  - git push origin master
 
 
     
