@@ -18,6 +18,8 @@ install:
 
 
 script:
+  - git log -1 --pretty=format:'%an'
+  - git log -1 
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - pwd
   - cd Function
