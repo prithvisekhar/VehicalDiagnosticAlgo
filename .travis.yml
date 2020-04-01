@@ -28,6 +28,7 @@ script:
   - echo "Done Done"
   - cd ..
   - git add -A
+  - git config user.name "John Doe"
   - git commit -m "lkjlk"
   - git log -1 --pretty=format:'%an'
    
