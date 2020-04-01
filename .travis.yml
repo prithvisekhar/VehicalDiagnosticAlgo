@@ -45,9 +45,7 @@ deploy:
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
-    branch:
-      only:
-        - master
+    branch: master
     
 after_deploy:
   - git push origin master
