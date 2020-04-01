@@ -1,17 +1,17 @@
 
 import os
 
+df_Pipeline = pd.read_csv("Running_Pipline.csv")
 
 f = open("Coverage_Function.sh", "w")
 
-FileNames=[name for name in os.listdir(".") if os.path.isdir(name)]
 FilePaths=' '
-for x in FileNames:
-	if os.path.isfile(x+"/.coverage"):
-		FilePaths= FilePaths+ x +"/.coverage  "
+for x in df_Pipeline.index:
+	FilePaths= FilePaths+str(df_Pipeline["FileName"][i]) +"/.coverage  "
 		
 	
-f.write("coverage combine "+FilePaths+ "\n")
-print("coverage combine "+FilePaths+ "\n")
+f.write("coverage combine .coverage "+FilePaths+ "\n")
+print("coverage combine .coverage "+FilePaths+ "\n")
 f.write("codeclimate-test-reporter  --token $CC_TEST_REPORTER_ID --file ./.coverage  \n")
+
 f.close()
