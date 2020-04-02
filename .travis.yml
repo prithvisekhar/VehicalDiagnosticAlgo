@@ -1,9 +1,4 @@
 
-  
-env:
-  global:
-    - CC_TEST_REPORTER_ID=ca2e2153c95d54b45acf92dc766b6722c2cfd1371e5500f8c7d58d2b753f857a
-    - email=`git log -1 --pretty=format:'%ae'`
     
 language: python
 python:
@@ -20,8 +15,6 @@ install:
 
 script:
   - echo $CC_TEST_REPORTER_ID
-  - git log -1 --pretty=format:'%an'
-  - git log -1 
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - pwd
   - cd Function
@@ -29,45 +22,12 @@ script:
   - bash Running_Function.sh
   - python CoverageCombine.py
   - bash Coverage_Function.sh
-  - echo "Done Done"
   - cd ..
-  - git config user.name "John Doe"
-  - git add -A
-  - git commit -m "lkjlk"
-  - echo $email
- # - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
-  - echo "hehehfdddfgfgehhjjh"
-
 
 git:
   depth: 2
   
-branches:
-  only:
-   - gh-pages
-after_success:
-#    - coveralls
-#    - codecov
-    
 
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: gh-pages
-    condition: $email != deploy@travis-ci.org
-    
-after_failure:
-  - echo problem
-
-after_deploy:
-  - git push origin master
-
-
-    
 notifications:
   email:
     recipients:
