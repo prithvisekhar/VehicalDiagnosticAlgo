@@ -36,7 +36,7 @@ script:
   - git commit -m "lkjlk"
   - echo $email
  # - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
-  - echo "hehehffgfgehhjjh"
+  - echo "hehehfdddfgfgehhjjh"
 
 
 git:
@@ -58,7 +58,10 @@ deploy:
   keep_history: true
   on:
     branch: gh-pages
-    condition: `git log -1 --pretty=format:'%ae' != deploy@travis-ci.org
+    condition: $email != deploy@travis-ci.org
+    
+after_failure:
+  - echo problem
 
 after_deploy:
   - git push origin master
