@@ -1,0 +1,5 @@
+Trip Time in Seconds,ImageFile,PotholeValue,DataDriven, Longitude, Latitude
+47,61_detected.bmp,[-0.23512229 -0.22367621],Confirmend With Data,78.53970206,17.34095142
+,130_detected.bmp, ,Not Confirmend With Data ,, 
+67,92_detected.bmp,[-0.27304188],Confirmend With Data,78.53935522,17.34100897
+37,41_detected.bmp,[-0.24016602],Confirmend With Data,78.53972116,17.34099316
