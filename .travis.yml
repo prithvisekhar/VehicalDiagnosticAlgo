@@ -36,7 +36,7 @@ script:
   - git commit -m "lkjlk"
   - echo $email
  # - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
-  - echo "hehehffgfgehhjjh"
+  - echo "hehehfdddfgfgehhjjh"
 
 
 git:
