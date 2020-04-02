@@ -20,8 +20,6 @@ script:
   - cd Function
   - python Run_Pipline.py
   - bash Running_Function.sh
-  - python CoverageCombine.py
-  - bash Coverage_Function.sh
   - cd ..
 
 git:
