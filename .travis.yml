@@ -58,7 +58,10 @@ deploy:
   keep_history: true
   on:
     branch: gh-pages
-    #condition: $email != deploy@travis-ci.org
+    condition: $email != deploy@travis-ci.org
+    
+after_failure:
+  - echo problem
 
 after_deploy:
   - git push origin master
