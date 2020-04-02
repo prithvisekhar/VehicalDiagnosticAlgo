@@ -58,7 +58,7 @@ deploy:
   keep_history: true
   on:
     branch: gh-pages
-    condition: $email != deploy@travis-ci.org
+    condition: `git log -1 --pretty=format:'%ae' != deploy@travis-ci.org
 
 after_deploy:
   - git push origin master
