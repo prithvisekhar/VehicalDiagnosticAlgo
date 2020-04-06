@@ -11,7 +11,7 @@ def AverageDistance(Distance, Fuel, Kmpl):
     UsedFuel = Fuel.iloc[-1] - Fuel.iloc[1]
     print ("UsedFuel:", UsedFuel)
     Mileage = TotalDistance/UsedFuel
-    TimeIndex = int(input('Enter the Time : '))
+    TimeIndex = 28 #int(input('Enter the Time : '))
     for i in Distance.index:
         ExpectedDistance.append([Fuel[i] * Mileage, i])
     if TimeIndex < Kmpl.index[-1]:
