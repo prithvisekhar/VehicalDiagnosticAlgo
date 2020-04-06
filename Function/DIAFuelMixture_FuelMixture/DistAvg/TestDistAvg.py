@@ -1,8 +1,12 @@
 import unittest
-import DistAvg
+#import DistAvg
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from importlib.machinery import SourceFileLoader
+
+DIAFuelMixture = SourceFileLoader("AverageDistance",
+                                     "../DIAFuelMixture.py").load_module()
 
 
 class TestDistAvg(unittest.TestCase):
@@ -17,7 +21,7 @@ class TestDistAvg(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                DistanceToZero = DistAvg.AverageDistance(df['Trip Distance(km)'].replace(to_replace="-", value="0"), df['Fuel Remaining (Calculated from vehicle profile)(%)'].replace(to_replace="-", value="0"), df['Kilometers Per Litre(Instant)(kpl)'].replace(to_replace="-", value="0"))
+                DistanceToZero = DIAFuelMixture.AverageDistance(df['Trip Distance(km)'].replace(to_replace="-", value="0"), df['Fuel Remaining (Calculated from vehicle profile)(%)'].replace(to_replace="-", value="0"), df['Kilometers Per Litre(Instant)(kpl)'].replace(to_replace="-", value="0"))
                 plt.plot(DistanceToZero.loc[:, 'Index'], DistanceToZero.loc[:, 'DistanceToZero'], 'r.')
                 plt.title("Distance To Zero")
                 plt.savefig(path+"Distance To Zero"+'.png')

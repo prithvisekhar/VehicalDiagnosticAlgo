@@ -1,9 +1,13 @@
 import os
 import unittest
 import pandas as pd
-import DIAFuelMixture
+#import DIAFuelMixture
 import matplotlib.pyplot as plt
 import numpy as np
+from importlib.machinery import SourceFileLoader
+
+DIAFuelMixture = SourceFileLoader("Fuel_Mixture",
+                                     "../DIAFuelMixture.py").load_module()
 
 
 class TestFuel_Mixture(unittest.TestCase):
@@ -20,8 +24,7 @@ class TestFuel_Mixture(unittest.TestCase):
                 path = os.path.join("Result/", TempFile4)
                 Lean, Rich, Nrml = DIAFuelMixture.Fuel_Mixture\
                     (df['O2 Volts Bank 1 sensor 2(V)'].replace('-', 0))
-                TempO2Sensor = df['O2 Volts Bank 1 sensor 2(V)'
-                ].replace(to_replace='-', value=0)
+                TempO2Sensor = df['O2 Volts Bank 1 sensor 2(V)'].replace(to_replace='-', value=0)
                 plt.figure()
                 plt.plot(np.repeat(0.1, len(TempO2Sensor)), label='0.1')
                 plt.plot(np.repeat(0.0, len(TempO2Sensor)), label='0.0')
