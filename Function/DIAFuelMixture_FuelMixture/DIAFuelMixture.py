@@ -1,4 +1,4 @@
-import pandas as pd/
+import pandas as pd
 
 
 def Fuel_Mixture(O2_Volts):
