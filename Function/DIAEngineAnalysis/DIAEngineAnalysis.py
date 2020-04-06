@@ -63,24 +63,24 @@ def LoadAnalysis(EngineLoad, EngineRPM, VehicleSpeed, TripTime):
             0.4 * (EngineRPM[i] * 60 * 3.14 * 2 * TyreSize * 25.4 *
                    0.000001) / (GearRatio * AxleRatio))
 
-        if (VehicleSpeed[i] < (ExpectedSpeed[i])):
+        if (VehicleSpeed[i] < ExpectedSpeed[i]):
             # Checking whether vehicle speed is less than expected speed
             TempVehicleSpeedLess.append([VehicleSpeed[i], i])
         else:
             TempVehicleSpeedMore.append([VehicleSpeed[i], i])
 
-    EngineLoadLess = pd.DataFrame(data=TempEngineLoadLess, columns=[
-        'EngineLoad', 'Index'])
-    EngineLoadMore = pd.DataFrame(data=TempEngineLoadMore, columns=[
-        'EngineLoad', 'Index'])
-    EngineRPMLess = pd.DataFrame(data=TempEngineRPMLess, columns=[
-        'EngineRPM', 'Index'])
-    EngineRPMMore = pd.DataFrame(data=TempEngineRPMMore, columns=[
-        'EngineRPM', 'Index'])
-    VehicleSpeedLess = pd.DataFrame(data=TempVehicleSpeedLess, columns=[
-        'VehicleSpeed', 'Index'])
-    VehicleSpeedMore = pd.DataFrame(data=TempVehicleSpeedMore, columns=[
-        'VehicleSpeed', 'Index'])
+    EngineLoadLess = pd.DataFrame(data=TempEngineLoadLess,
+                                  columns=['EngineLoad', 'Index'])
+    EngineLoadMore = pd.DataFrame(data=TempEngineLoadMore,
+                                  columns=['EngineLoad', 'Index'])
+    EngineRPMLess = pd.DataFrame(data=TempEngineRPMLess,
+                                 columns=['EngineRPM', 'Index'])
+    EngineRPMMore = pd.DataFrame(data=TempEngineRPMMore,
+                                 columns=['EngineRPM', 'Index'])
+    VehicleSpeedLess = pd.DataFrame(data=TempVehicleSpeedLess,
+                                    columns=['VehicleSpeed', 'Index'])
+    VehicleSpeedMore = pd.DataFrame(data=TempVehicleSpeedMore,
+                                    columns=['VehicleSpeed', 'Index'])
 
     return EngineLoadLess, EngineLoadMore, EngineRPMLess, EngineRPMMore,\
            VehicleSpeedLess, VehicleSpeedMore, ExpectedSpeed, LoadThreshold,\

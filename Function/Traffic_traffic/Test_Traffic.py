@@ -40,9 +40,12 @@ class TestTraffic(unittest.TestCase):
                 plt.savefig(path + "/Speed vs Index" + '.png')
 
                 plt.figure(3)
-                plt.plot(HC.loc[:, 'Latitude'], HC.loc[:, 'Index'], 'r.')
+                """plt.plot(HC.loc[:, 'Latitude'], HC.loc[:, 'Index'], 'r.')
                 plt.plot(MC.loc[:, 'Latitude'], MC.loc[:, 'Index'], 'b.')
-                plt.plot(LC.loc[:, 'Latitude'], LC.loc[:, 'Index'], 'g.')
+                plt.plot(LC.loc[:, 'Latitude'], LC.loc[:, 'Index'], 'g.')"""
+                plot1('Latitude','Longitude','r.',HC)
+                plot1('Latitude','Longitude','b.',MC)
+                plot1('Latitude','Longitude','g.',LC)
                 plt.title("Latitude vs Index")
                 plt.savefig(path + "/Latitude vs Index" + '.png')
 
@@ -62,3 +65,6 @@ class TestTraffic(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+def plot1(point1, point2, colour, dataset)
+    plt.plot(dataset.loc[:, point1], dataset.loc[:, point2], colour'.')
