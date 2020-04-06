@@ -9,7 +9,7 @@ for i in df_Pipeline.index:
 	f.write("coverage run --source=.  Test*.py\n")
 	f.write("coverage report \n")
 	f.write("coverage html \n")
-	t1=i.split('/')
+	t1=str(df_Pipeline["FileName"][i]).split('/')
 	for k in range(1,len(t1)):
 		f.write("cd ..\n")
 
