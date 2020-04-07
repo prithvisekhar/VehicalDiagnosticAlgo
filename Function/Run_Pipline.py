@@ -10,8 +10,8 @@ for i in df_Pipeline.index:
 	f.write("python Test*.py\n")
 	f.write("pwd\n")
 	if len(t1)>1:
-		f.write("coverage run  --include='pwd'/* "+str(t1[1])+"/Test*.py\n")
-		print("coverage run  --include='pwd'/* "+str(t1[1])+"/Test*.py\n")
+		f.write("coverage run  --source=.,"+str(t1[1])+"/Test*.py"+" "+str(t1[1])+"/Test*.py\n")
+		print("coverage run  --source=.,"+str(t1[1])+"/Test*.py"+" "+str(t1[1])+"/Test*.py\n")
 	else:
 		f.write("coverage run --source=. Test*.py\n")
 			
