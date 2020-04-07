@@ -9,6 +9,7 @@ for i in df_Pipeline.index:
 	
 	f.write("python Test*.py\n")
 	f.write("coverage run --source= "+str(t1[0])+" Test*.py\n")
+	print("coverage run --source= "+str(t1[0])+" Test*.py\n")
 	f.write("coverage report \n")
 	f.write("coverage html \n")
 	
