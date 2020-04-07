@@ -7,7 +7,7 @@ for i in df_Pipeline.index:
 	
 	t1=str(df_Pipeline["FileName"][i]).split('/')
 	f.write("cd "+str(t1[0])+"\n")
-	f.write("python Test*.py\n")
+	f.write("python "+str(t1[1])+"/Test*.py\n")
 	f.write("pwd\n")
 	if len(t1)>1:
 		f.write("coverage run   --source=.  "+" "+str(t1[1])+"/Test*.py\n")
