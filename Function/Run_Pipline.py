@@ -11,7 +11,7 @@ for i in df_Pipeline.index:
 	f.write("pwd\n")
 	if len(t1)>1:
 		f.write("coverage run   --source=.,../"+" /Test*.py\n")
-		print("coverage run   --source=.,../"+" /Test*.py\n"")
+		print("coverage run   --source=.,../"+" /Test*.py\n")
 	#else:
 		#f.write("coverage run --source="+str(t1[0])+" "+str(df_Pipeline["FileName"][i])+"/Test*.py\n")
 			
