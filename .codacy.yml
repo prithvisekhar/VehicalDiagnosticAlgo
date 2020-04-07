@@ -1,2 +1,4 @@
+- *.js'
 exclude_paths:
   - '*.js'
+ 
