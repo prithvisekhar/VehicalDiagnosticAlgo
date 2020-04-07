@@ -1,0 +1,2 @@
+ignore:
+  - "*.js"  # ignore folders and all its contents
