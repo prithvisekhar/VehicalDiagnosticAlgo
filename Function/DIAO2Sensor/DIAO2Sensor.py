@@ -3,8 +3,7 @@ import pandas as pd
 
 def O2_Sensor(O2_value):
     O2_value = O2_value.replace(to_replace='-', value=0)
-    value = O2_value
-    df1 = pd.DataFrame(data=value)
+    df1 = pd.DataFrame(data=O2_value)
     mean_value = df1.mean()
     return mean_value
     if ((mean_value > 0.315).any() & (mean_value < 0.585).any()):
