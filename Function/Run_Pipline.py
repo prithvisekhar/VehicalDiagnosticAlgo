@@ -18,6 +18,6 @@ for i in df_Pipeline.index:
 	f.write("coverage report \n")
 	f.write("coverage html \n")
 	
-	f.write("cd ..\n")
+	#f.write("cd ..\n")
 
 f.close()
