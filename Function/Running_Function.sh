@@ -4,17 +4,19 @@ pwd
 coverage report 
 coverage html 
 cd ..
-cd DIAFuelMixture_FuelMixture
+cd DIAFuelMixture_FuelMixture/DIAFuelMixture
 python Test*.py
 pwd
-coverage run   --source=.   DIAFuelMixture/Test*.py
+coverage run   --source=.,../ /Test*.py
 coverage report 
 coverage html 
 cd ..
-cd DIAFuelMixture_FuelMixture
+cd ..
+cd DIAFuelMixture_FuelMixture/DistAvg
 python Test*.py
 pwd
-coverage run   --source=.   DistAvg/Test*.py
+coverage run   --source=.,../ /Test*.py
 coverage report 
 coverage html 
+cd ..
 cd ..
