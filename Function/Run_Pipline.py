@@ -13,7 +13,7 @@ for i in df_Pipeline.index:
 		f.write("coverage run  --source="+str(t1[0])+" "+str(df_Pipeline["FileName"][i])+"/Test*.py\n")
 		print("coverage run  --source="+str(t1[0])+" "+str(df_Pipeline["FileName"][i])+"/Test*.py\n")
 	else:
-		f.write("coverage run --source=. Test*.py\n")
+		f.write("coverage run --source="+str(t1[0])+" "+str(df_Pipeline["FileName"][i])+"/Test*.py\n")
 			
 	f.write("coverage report \n")
 	f.write("coverage html \n")
