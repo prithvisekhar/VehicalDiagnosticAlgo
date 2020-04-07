@@ -21,3 +21,19 @@ coverage report
 coverage html 
 cd ..
 cd ..
+cd DIAEngineAnalysis/DIAEngineAnalysis_Coolant
+python Test*.py
+pwd
+coverage run   --source=.,../  Test*.py
+coverage report 
+coverage html 
+cd ..
+cd ..
+cd DIAEngineAnalysis/DIAEngineAnalysis_LoadAnalysis
+python Test*.py
+pwd
+coverage run   --source=.,../  Test*.py
+coverage report 
+coverage html 
+cd ..
+cd ..
