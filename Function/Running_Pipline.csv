@@ -2,3 +2,5 @@ FileName
 DIASpeedVoilation_SpeedVoilation
 DIAFuelMixture_FuelMixture/DIAFuelMixture
 DIAFuelMixture_FuelMixture/DistAvg
+DIAEngineAnalysis/DIAEngineAnalysis_Coolant
+DIAEngineAnalysis/DIAEngineAnalysis_LoadAnalysis
