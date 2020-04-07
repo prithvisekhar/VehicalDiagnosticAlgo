@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from importlib.machinery import SourceFileLoader
 
-DIAFuelMixture = SourceFileLoader("Fuel_Mixture",
-                                     "../DIAFuelMixture.py").load_module()
+DIAFuelMixture = SourceFileLoader("Fuel_Mixture","../DIAFuelMixture.py").load_module()
 
 
 class TestFuel_Mixture(unittest.TestCase):
