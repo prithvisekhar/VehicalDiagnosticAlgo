@@ -2,13 +2,9 @@
 
 [![Build Status Travis](https://travis-ci.org/prithvisekhar/VehicalDiagnosticAlgo.svg?branch=master)](https://travis-ci.org/prithvisekhar/VehicalDiagnosticAlgo) 
 
-![CI_GITHUB_Internal](https://github.com/prithvisekhar/VehicalDiagnosticAlgo/workflows/CI/badge.svg)
-
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/850d420d714c4c5a899b0de26e00b09d)](https://www.codacy.com/manual/prithvisekhar/VehicalDiagnosticAlgo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prithvisekhar/VehicalDiagnosticAlgo&amp;utm_campaign=Badge_Grade)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4fa4a36a9eaf145944ac/maintainability)](https://codeclimate.com/github/prithvisekhar/VehicalDiagnosticAlgo/maintainability)
-
-[![BCH compliance](https://bettercodehub.com/edge/badge/prithvisekhar/VehicalDiagnosticAlgo?branch=master)](https://bettercodehub.com/results/prithvisekhar/VehicalDiagnosticAlgo)
 
 Some of the common road problems today include traffic, accidents and uneconomical driving styles.
 
