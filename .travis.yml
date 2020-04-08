@@ -28,7 +28,7 @@ script:
   - python Run_Pipline.py
   - bash Running_Function.sh
   - python CoverageCombine.py
-  - bash Coverage_Function.sh || echo "Hello"
+  - bash Coverage_Function.sh 
   - echo "Done Done"
   - cd ..
   - git config user.name "John Doe"
