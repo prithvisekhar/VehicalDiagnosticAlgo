@@ -27,7 +27,8 @@ class Test_O2Sensor(unittest.TestCase):
                 plt.close()
         
         except AssertionError as e:
-            f = open("Error_O2Sensor", "a")
+            print("In Test Failed")
+            f = open("Error_O2Sensor", "w")
             f.write("TestCase_no_0:\n\t" + str(e) + " \n")
 
 
