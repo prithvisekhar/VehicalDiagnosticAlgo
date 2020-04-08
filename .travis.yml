@@ -38,6 +38,8 @@ script:
  # - [[ "$email" == "deploy@travis-ci.org" ]] && echo "BOOM" || echo "BAM"
   - echo "hehehfdddfgfgehhjjh"
 
+after_failure:
+  - echo " Check the file it failed"
 
 git:
   depth: 2
