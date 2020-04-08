@@ -25,3 +25,11 @@ class Test_O2Sensor(unittest.TestCase):
                 plt.xlabel("Time")
                 plt.ylabel("O2 in volts")
                 plt.close()
+        
+        except AssertionError as e:
+            f = open("Error_O2Sensor", "a")
+            f.write("TestCase_no_0:\n\t" + str(e) + " \n")
+
+
+if __name__ == '__main__':
+    unittest.main()
