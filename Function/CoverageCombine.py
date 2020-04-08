@@ -9,6 +9,7 @@ FilePaths=' '
 for i in df_Pipeline.index:
 	if os.path.isfile(str(df_Pipeline["FileName"][i]) +"/.coverage"):
 		FilePaths= FilePaths+str(df_Pipeline["FileName"][i]) +"/.coverage  "
+		print('dsfdsfssfsf')
 		flage=1
 		
 		
