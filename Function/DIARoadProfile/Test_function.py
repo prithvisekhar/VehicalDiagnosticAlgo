@@ -30,7 +30,7 @@ class Test_Pothole(unittest.TestCase):
                 Accz = df['Acceleration Sensor(Z axis)(g)']
                 Lat = df[' Latitude']
                 time_np=np.array(time)
-                confirmed_potholes,possible_potholes,indexvalues_confirmed,Acc_signal,Acc_index=DIAPothole.Pothole(Accy)
+                confirmed_potholes,possible_potholes,indexvalues_confirmed,Acc_signal,Acc_index=DIAPothole.Pothole(Accx)
                 confirmed = np.array(indexvalues_confirmed)
                 idx=  np.nonzero(confirmed)
                 plt.figure(1)
