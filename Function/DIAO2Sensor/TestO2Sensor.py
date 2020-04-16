@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sys
 
+
 class Test_O2Sensor(unittest.TestCase):
     def testO2Sensor(self):
         try:
@@ -17,7 +18,13 @@ class Test_O2Sensor(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                mean_value = DIAO2Sensor.O2_Sensor(df['O2 Volts Bank 1 sensor 1(V)'])
+                mean_value, condition = DIAO2Sensor.O2_Sensor(df['O2 Volts Bank 1 sensor 1(V)'])
+                if condition == 0:
+                    print("O2 Sensor in Good Condition")
+                elif condition == 1:
+                    print("Warning! O2 Sensor Degrading")
+                else:
+                    print("O2 Sensor in Bad Condition, needs replacement")
                 plt.figure(figsize=(10, 6))
                 plt.plot(df['Trip Time(Since journey start)(s)'][:100], df['O2 Volts Bank 1 sensor 1(V)'][:100],
                          marker='o', markerfacecolor='red')
@@ -38,4 +45,3 @@ class Test_O2Sensor(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
