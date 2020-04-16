@@ -55,7 +55,8 @@ class Test_Pothole(unittest.TestCase):
             f = open("Error_Pothole", "a")
             f.write("TestCase_no_0:\n\t" + str(e) + " \n")
 
-
+if __name__ == '__main__':
+    unittest.main()
 # In[ ]:
 
 
