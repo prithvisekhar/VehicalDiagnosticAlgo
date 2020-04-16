@@ -3,7 +3,7 @@ import unittest
 import DIAO2Sensor
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import sys
 
 class Test_O2Sensor(unittest.TestCase):
     def testO2Sensor(self):
@@ -17,7 +17,7 @@ class Test_O2Sensor(unittest.TestCase):
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
                 path = os.path.join("Result/", TempFile4)
-                mean_value = DIAO2Sensor.O2_Sensor(df['02 Volts Bank 1 sensor 1(V)'])
+                mean_value = DIAO2Sensor.O2_Sensor(df['O2 Volts Bank 1 sensor 1(V)'])
                 plt.figure(figsize=(10, 6))
                 plt.plot(df['Trip Time(Since journey start)(s)'][:100], df['O2 Volts Bank 1 sensor 1(V)'][:100],
                          marker='o', markerfacecolor='red')
