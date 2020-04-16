@@ -16,3 +16,5 @@ values of coolant temperature to check whether the system is running in the safe
 
 -   Graph of Coolant temperature vs Index showing where the temperature has excedded.
 -   Graph Engine load vs Trip time.
+
+![](Result/Dataset-1.png)
