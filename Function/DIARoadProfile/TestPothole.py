@@ -49,7 +49,7 @@ class Test_Pothole(unittest.TestCase):
                 plt.savefig(path+'.png')
                 print(confirmed_potholes)
                 print(indexvalues_confirmed[0])
-                plt.show()
+                plt.close()
                 
         except AssertionError as e:
             f = open("Error_Pothole", "a")
