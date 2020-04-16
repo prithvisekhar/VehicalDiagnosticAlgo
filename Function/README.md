@@ -38,7 +38,20 @@ less fuel) or rich (More fuel and less air)
  
 -   Graphs showing instances where the mixture is lean, rich or normal.
 
-## 4)Speed Violation
+## 4) O2 Sensor
+The Function calculates the mean of O2 Sensor values, and depending upon the percentage deviation from the ideal value (0.45v) specifies the condition of O2 Sensor.
+
+### Input
+
+- O2 Sensor Bank 1
+- Trip Time (since journey start)(s)
+
+### Output
+
+- Condition of O2 Sensor
+- Graph of Trip time vs O2 Sensor specifying Ideal, Rich and Lean Conditions.
+
+## 5)Speed Violation
 It checks the speed of the system and returns the location at which the speed
 of the system exceeded the permissible value.
 
