@@ -18,4 +18,4 @@ The Function calculates the mean of O2 Sensor values, and depending upon the per
 ![](Result/Dataset-2.png)
 
 ## Coverage
-[Link](https://raw.githack.com/prithvisekhar/VehicalDiagnosticAlgo/gh-pages/Function/DIAO2Sensor/htmlcov/index.html)
+[Link](https://rawcdn.githack.com/prithvisekhar/VehicalDiagnosticAlgo/19617a6d7f2fead6ba29ad4b6eedc64c8c60cb23/Function/DIAO2Sensor/htmlcov/index.html)
