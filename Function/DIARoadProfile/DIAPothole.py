@@ -5,12 +5,11 @@
 
 
 from __future__ import division
-import gmplot
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-import peakutils 
-import scipy
+#import peakutils 
+#import scipy
 
 def Pothole(Accelerometer_values):
     Cutoff_freq = 0.2  
