@@ -7,10 +7,8 @@ def O2_Sensor(O2_value):
     mean_value = df1.mean()
     if ((mean_value > 0.315).any() & (mean_value < 0.585).any()):
         condition = 0
-        break
     elif ((mean_value > 0.225).any() & (mean_value < 0.675).any()):
         condition = 1
-        break
     else:
         condition = 2
     return mean_value, condition
