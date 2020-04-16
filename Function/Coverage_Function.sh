@@ -1,3 +1,3 @@
 #!/bin/sh -e 
-coverage combine .coverage  DIAEngineAnalysis/DIAEngineAnalysis_Coolant/.coverage  DIAEngineAnalysis/DIAEngineAnalysis_LoadAnalysis/.coverage  DIAFuelMixture_FuelMixture/DIAFuelMixture/.coverage  DIAO2Sensor/.coverage  DIASpeedVoilation_SpeedVoilation/.coverage  
+coverage combine .coverage  DIARoadProfile/.coverage  
 codeclimate-test-reporter  --token $CC_TEST_REPORTER_ID --file ./.coverage  
