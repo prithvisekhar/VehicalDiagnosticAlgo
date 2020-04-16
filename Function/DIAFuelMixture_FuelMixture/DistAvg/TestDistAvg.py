@@ -17,10 +17,7 @@ class TestDistAvg(unittest.TestCase):
                 os.mkdir("Result")
             for i in df_File.index:
                 df = pd.read_csv(str(df_File["Input_File_Name"][i]))
-                TempFile1 = df_File["Input_File_Name"][i].split('/')
-                TempFile3 = TempFile1[-1].split('.')
-                TempFile4 = str(TempFile3[0])
-                path = os.path.join("Result/", TempFile4)
+                path = os.path.join("Result" + "/", str(df_File["Input_File_Name"][i].split('/')[-1].split('.')[0]))
                 DistanceToZero = DIAFuelMixture.AverageDistance(df['Trip Distance(km)'].replace(to_replace="-", value="0"), df['Fuel Remaining (Calculated from vehicle profile)(%)'].replace(to_replace="-", value="0"), df['Kilometers Per Litre(Instant)(kpl)'].replace(to_replace="-", value="0"))
                 plt.plot(DistanceToZero.loc[:, 'Index'], DistanceToZero.loc[:, 'DistanceToZero'], 'r.')
                 plt.title("Distance To Zero")
