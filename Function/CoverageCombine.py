@@ -15,7 +15,7 @@ for i in df_Pipeline.index:
 		
 		
 if flage==1:	
-	f.write("coverage combine .coverage  "+FilePaths+ "\n")
+	f.write("coverage combine .coverage "+FilePaths+ "\n")
 	f.write("codeclimate-test-reporter  --token $CC_TEST_REPORTER_ID --file ./.coverage  \n")
 
 f.close()
