@@ -1,10 +1,10 @@
 ## other configuration excluded from example...
-- "*.js"
-- "*.json"
+##- "*.js"
+##- "*.json"
 
-exclude_patterns:
-- *.js
-- "*.json"
-- "**/*.js"
-- "**/*.html"
-- "**/*.json"
+- exclude_patterns:
+  - *.js
+  - "*.json"
+  - "**/*.js"
+  - "**/*.html"
+  - "**/*.json"
