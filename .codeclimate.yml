@@ -25,11 +25,9 @@ checks:
       threshold: 50
       threshold: 4
   similar-code:
-    config:
-      threshold: 1
+    enabled: false
   identical-code:
-    config:
-      threshold: 1
+    enabled: false
 exclude_patterns:
 - "**/*.js"
 - "**/*.html"
