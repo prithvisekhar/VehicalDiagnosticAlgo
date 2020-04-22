@@ -3,6 +3,4 @@
 ##- "*.json"
 
 - exclude_patterns:
-  - "*.js"
-  - "*.html"
-  - "*.json"
+  - "/htmlconv"
