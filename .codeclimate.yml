@@ -20,10 +20,10 @@ checks:
       threshold: 150
   nested-control-flow:
     config:
-      threshold: 4
+      threshold: 15
   return-statements:
     config:
-      threshold: 4
+      threshold: 50
 exclude_patterns:
 - "**/*.js"
 - "**/*.html"
