@@ -23,6 +23,13 @@ checks:
   return-statements:
     config:
       threshold: 50
+      threshold: 4
+  similar-code:
+    config:
+      threshold:10 # language-specific defaults. an override will affect all languages.
+  identical-code:
+    config:
+      threshold:10
 exclude_patterns:
 - "**/*.js"
 - "**/*.html"
