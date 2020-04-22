@@ -2,4 +2,4 @@
 ##- "*.js"
 ##- "*.json"
 exclude_patterns:
-- "/htmlconv"
+- "*/htmlcov/*"
