@@ -26,10 +26,10 @@ checks:
       threshold: 4
   similar-code:
     config:
-      threshold: 10
+      threshold: 1
   identical-code:
     config:
-      threshold: 10
+      threshold: 1
 exclude_patterns:
 - "**/*.js"
 - "**/*.html"
