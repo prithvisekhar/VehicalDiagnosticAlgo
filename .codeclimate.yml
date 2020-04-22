@@ -3,6 +3,6 @@
 ##- "*.json"
 
 - exclude_patterns:
-  - "**/*.js"
-  - "**/*.html"
-  - "**/*.json"
+  - "*.js"
+  - "*.html"
+  - "*.json"
