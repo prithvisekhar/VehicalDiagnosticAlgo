@@ -1,6 +1,5 @@
 ## other configuration excluded from example...
 ##- "*.js"
 ##- "*.json"
-
-- exclude_patterns:
-  - "/htmlconv"
+exclude_patterns:
+- "/htmlconv"
