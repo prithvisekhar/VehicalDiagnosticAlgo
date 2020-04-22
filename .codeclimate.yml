@@ -14,10 +14,10 @@ checks:
       threshold: 100
   method-count:
     config:
-      threshold: 10
+      threshold: 20
   method-lines:
     config:
-      threshold: 100
+      threshold: 25
   nested-control-flow:
     config:
       threshold: 4
