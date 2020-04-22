@@ -5,3 +5,6 @@
 exclude_patterns:
 - *.js
 - "*.json"
+- "**/*.js"
+- "**/*.html"
+- "**/*.json"
