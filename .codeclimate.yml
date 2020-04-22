@@ -2,6 +2,6 @@
 ##- "*.js"
 ##- "*.json"
 exclude_patterns:
-- "*/htmlcov/*"
-- "**.js"
 - "**/*.js"
+- "**/*.html"
+- "**/*.json"
