@@ -28,7 +28,9 @@ class Test_Pothole(unittest.TestCase):
                 Accx = df['Acceleration Sensor(X axis)(g)'] 
                 Accy = df['Acceleration Sensor(Y axis)(g)']
                 Accz = df['Acceleration Sensor(Z axis)(g)']
-                Lat = df[' Latitude']
+                Speed = df['Speed (OBD)(km/h)']
+                RPM = df['Engine RPM(rpm)']
+                Acc_pedal = df['Accelerator PedalPosition E(%)']
                 time_np=np.array(time)
                 confirmed_potholes,possible_potholes,indexvalues_confirmed,Acc_signal,Acc_index=DIAPothole.Pothole(Accx)
                 confirmed = np.array(indexvalues_confirmed)
@@ -46,6 +48,15 @@ class Test_Pothole(unittest.TestCase):
                 plt.xlabel('Time in Seconds')
 
                 plt.legend(loc='upper right')
+                plt.savefig(path+'.png')
+                
+                plt.figure(2)
+                plt.plot(time,RPM,'y')
+                plt.plot(time,Speed,'r')
+                plt.plot(time,Acc_pedal,'c')
+                plt.title("Engine RPM, Speed and Accelerator pedal position vs time")
+                plt.xlabel('Time in seconds')
+                plt.ylabel('Engine RPM, Speed and Accelerator pedal postions')
                 plt.savefig(path+'.png')
                 print(confirmed_potholes)
                 print(indexvalues_confirmed[0])
