@@ -49,7 +49,7 @@ class Test_Pothole(unittest.TestCase):
 
                 plt.legend(loc='upper right')
                 plt.savefig(path+'.png')
-                plt.close()
+                
                 
                 plt.figure(2)
                 plt.plot(time,RPM,'y')
