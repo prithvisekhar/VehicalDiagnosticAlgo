@@ -1,4 +1,4 @@
-image: python:3.5-buster
+image: gitpod/workspace-full:build-branch-sh-update-python
 ports:
   - port: 5900
     onOpen: ignore
