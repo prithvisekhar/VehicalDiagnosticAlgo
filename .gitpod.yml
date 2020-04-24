@@ -1,4 +1,4 @@
-image: gitpod/workspace-full-vnc
+image: sgoblin/python3.5
 ports:
   - port: 5900
     onOpen: ignore
