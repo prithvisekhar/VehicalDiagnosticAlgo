@@ -6,4 +6,3 @@ ports:
     onOpen: open-preview
 tasks:
   - init: pip3 install -r requirements.txt
-    command: python3 flappy_bird.py
