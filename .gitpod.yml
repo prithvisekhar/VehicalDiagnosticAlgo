@@ -2,8 +2,8 @@ image: gitpod/workspace-full-vnc
 
 tasks:
   - init: pip3 install -r requirements.txt
-  - pyenv install 3.5
-  - pyenv local 3.5
+    command: pyenv install 3.5
+    command: pyenv local 3.5
 ports:
   - port: 8000
     onOpen: open-preview
