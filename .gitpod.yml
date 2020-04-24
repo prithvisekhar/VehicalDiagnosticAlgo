@@ -7,6 +7,5 @@ ports:
     onOpen: open-preview
 
 tasks:
-  - init: pip3 install -r requirements.txt
-    command: pyenv install 3.5
-    command: pyenv local 3.5
+  - init: pyenv install 3.5 
+    command: pyenv local 3.5;pip3 install -r requirements.txt
