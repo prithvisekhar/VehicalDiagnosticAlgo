@@ -1,4 +1,4 @@
-image: gitpod/workspace-full:build-branch-sh-update-python
+image: gitpod/workspace-full:branch-at-update-python
 ports:
   - port: 5900
     onOpen: ignore
