@@ -2,7 +2,7 @@ FROM gitpod/workspace-full-vnc
 
 USER gitpod
 
-RUN sudo apt-get update && sudo apt-get install build-essential checkinstall
+RUN sudo apt-get -y update && sudo apt-get -y install build-essential checkinstall
 RUN sudo apt-get -y install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 RUN cd /usr/src
 RUN sudo apt-get -y install wget
