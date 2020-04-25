@@ -16,8 +16,10 @@ class Test_Pothole(unittest.TestCase):
     def testPothole(self):
         try:
             df_File = pd.read_csv("List_of_Data_Set.csv")
-            if not (os.path.isdir("Result")):
-                os.mkdir("Result")
+            if not (os.path.isdir("Result1")):
+                os.mkdir("Result1")
+            if not (os.path.isdir("Result2")):
+                os.mkdir("Result2")
             for i in df_File.index:
                 df = pd.read_csv(str(df_File["Input_File_Name"][i]))
                 TempFile1 = df_File["Input_File_Name"][i].split('/')
