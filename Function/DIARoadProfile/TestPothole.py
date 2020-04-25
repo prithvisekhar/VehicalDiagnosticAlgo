@@ -35,7 +35,7 @@ class Test_Pothole(unittest.TestCase):
                 confirmed_potholes,possible_potholes,indexvalues_confirmed,Acc_signal,Acc_index=DIAPothole.Pothole(Accx)
                 confirmed = np.array(indexvalues_confirmed)
                 idx=  np.nonzero(confirmed)
-                plt.figure(1)
+                plt.subplot(121)
                 plt.plot(time_np,Acc_signal,label='Vertical Acceleration')
                 plt.plot(time_np[idx[0][0]+confirmed[0]],confirmed_potholes,'r.',markersize=10,label='Detected Potholes')
                 #plt.plot(np.repeat(-0.1,len(d)),label='-0.1')
@@ -46,19 +46,21 @@ class Test_Pothole(unittest.TestCase):
                 plt.title("Pothole Detection with Filtered Acceleration Data.")
                 plt.ylabel('Acceleration After High Pass Filter')
                 plt.xlabel('Time in Seconds')
+                plt.legend(loc='upper right')
+                
+                plt.subplot(313)
+                plt.plot(time,Speed, label='Speed')
+                plt.plot(time,Acc_pedal, label='Accelerator pedal position')
+                plt.plot(time,RPM, label='RPM')
+                plt.ylabel('Parameters')
+                plt.xlabel('Time in Seconds')
+                plt.legend(loc='upper right')
 
                 plt.legend(loc='upper right')
                 plt.savefig(path+'.png')
                 
                 
-                #plt.figure(2)
-                #plt.plot(time,RPM,'y')
-                #plt.plot(time,Speed,'r')
-                #plt.plot(time,Acc_pedal,'c')
-                #plt.title("Engine RPM, Speed and Accelerator pedal position vs time")
-                #plt.xlabel('Time in seconds')
-                #plt.ylabel('Engine RPM, Speed and Accelerator pedal postions')
-                #plt.savefig(path+'.png')
+                
                 print(confirmed_potholes)
                 print(indexvalues_confirmed[0])
                 plt.close()
