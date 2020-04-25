@@ -23,7 +23,8 @@ class Test_Pothole(unittest.TestCase):
                 TempFile1 = df_File["Input_File_Name"][i].split('/')
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
-                path = os.path.join("Result/", TempFile4)
+                path = os.path.join("Result1/", TempFile4)
+                path1 = os.path.join("Result2/", TempFile4)
                 time = df['Trip Time(Since journey start)(s)']
                 Accx = df['Acceleration Sensor(X axis)(g)'] 
                 Accy = df['Acceleration Sensor(Y axis)(g)']
@@ -36,7 +37,6 @@ class Test_Pothole(unittest.TestCase):
                 confirmed = np.array(indexvalues_confirmed)
                 idx=  np.nonzero(confirmed)
                 plt.figure(1)
-                plt.subplot(311)
                 plt.plot(time_np,Acc_signal,label='Vertical Acceleration')
                 plt.plot(time_np[idx[0][0]+confirmed[0]],confirmed_potholes,'r.',markersize=10,label='Detected Potholes')
                 #plt.plot(np.repeat(-0.1,len(d)),label='-0.1')
@@ -49,7 +49,7 @@ class Test_Pothole(unittest.TestCase):
                 plt.xlabel('Time in Seconds')
                 plt.legend(loc='upper right')
                 
-                plt.subplot(313)
+                figure(2)
                 plt.plot(time,Speed, label='Speed')
                 plt.plot(time,Acc_pedal, label='Accelerator pedal position')
                 plt.plot(time,RPM, label='RPM')
@@ -58,7 +58,7 @@ class Test_Pothole(unittest.TestCase):
                 plt.legend(loc='upper right')
 
                 plt.legend(loc='upper right')
-                plt.savefig(path+'.png')
+                plt.savefig(path1+'.png')
                 
                 
                 
