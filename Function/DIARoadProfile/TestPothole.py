@@ -35,6 +35,7 @@ class Test_Pothole(unittest.TestCase):
                 confirmed_potholes,possible_potholes,indexvalues_confirmed,Acc_signal,Acc_index=DIAPothole.Pothole(Accx)
                 confirmed = np.array(indexvalues_confirmed)
                 idx=  np.nonzero(confirmed)
+                plt.figure(1)
                 plt.subplot(311)
                 plt.plot(time_np,Acc_signal,label='Vertical Acceleration')
                 plt.plot(time_np[idx[0][0]+confirmed[0]],confirmed_potholes,'r.',markersize=10,label='Detected Potholes')
