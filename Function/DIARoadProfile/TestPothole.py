@@ -43,7 +43,6 @@ class Test_Pothole(unittest.TestCase):
                 plt.plot(time_np[idx[0][0]+confirmed[0]],confirmed_potholes,'r.',markersize=10,label='Detected Potholes')
                 #plt.plot(np.repeat(-0.1,len(d)),label='-0.1')
                 #plt.plot(np.repeat(-0.2,len(d)),label='-0.2')
-
                 plt.axhline(y=-0.1, color='m', linestyle='-',label='-0.1 Possibility Threshold of Pothole ')
                 plt.axhline(y=-0.2, color='y', linestyle='-',label='-0.2 Confirmation Threshold of Pothole ')
                 plt.title("Pothole Detection with Filtered Acceleration Data.")
@@ -58,12 +57,7 @@ class Test_Pothole(unittest.TestCase):
                 #plt.ylabel('Parameters')
                 #plt.xlabel('Time in Seconds')
                 #plt.legend(loc='upper right')
-
-                
                 #plt.savefig(path1+'.png')
-                
-                
-                
                 print(confirmed_potholes)
                 print(indexvalues_confirmed[0])
                 plt.close()
