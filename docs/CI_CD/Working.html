@@ -1,0 +1,45 @@
+<html>
+<body background="bg.jpg">
+<h1> Working of CI/CD</h1>
+<p>
+In the process of CI/CD, other applications and frameworks were also decided. But each had there own limitation and the best suited for us as Travis CI. For example, we used GIT Lab, the problem with that it was using a local server for hosting for the docker image.
+</p>
+
+
+To keep a clean and nice commit history we have built a different branch for updates and running and deploying the codes.
+<br>
+The following is the algorithm flow of Travis CI
+<br>
+ <img src="CIFlow.png" height="600"  >
+<br>
+The following is the code for deploying it and passing the condition for deploying .
+
+<!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #cccccc">deploy:</span>
+  <span style="color: #cccccc">provider:</span> <span style="color: #cccccc">pages</span>
+  <span style="color: #cccccc">skip_cleanup:</span> <span style="color: #cccccc">true</span>
+  <span style="color: #cccccc">github_token:</span> <span style="color: #cccccc">$GITHUB_TOKEN</span>
+  <span style="color: #cccccc">keep_history:</span> <span style="color: #cccccc">true</span>
+  <span style="color: #cccccc">on:</span>
+    <span style="color: #cccccc">branch:</span> <span style="color: #cccccc">gh-pages</span>
+    <span style="color: #cccccc">condition:</span> <span style="color: #cccccc">$email != deploy@travis-ci.org</span>
+    
+<span style="color: #cccccc">after_failure:</span>
+  <span style="color: #cccccc">-</span> <span style="color: #cccccc">echo problem</span>
+
+<span style="color: #cccccc">after_deploy:</span>
+  <span style="color: #cccccc">-</span> <span style="color: #cccccc">git push origin master</span>
+</pre></div>
+
+
+Following is the code just to run it in the branch and also just check the updated part [To reduce time in deploying].
+
+<!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #cccccc">git:</span>
+  <span style="color: #cccccc">depth:</span> <span style="color: #cccccc">2</span>
+  
+<span style="color: #cccccc">branches:</span>
+  <span style="color: #cccccc">only:</span>
+   <span style="color: #cccccc">-</span> <span style="color: #cccccc">gh-pages</span>
+</pre></div>
+
+</body>
+</html>

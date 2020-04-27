@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<title>Running the online platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body background="bg.jpg">
+
+
+<div class="w3-content w3-display-container">
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot1.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+1.Select the Branch  Folder. Change in the blue rectangle area.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot2.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+   2.Select the Function Folder.Click in the blue rectangle area.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot3.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+   3.Create the folder of the file name you want. According to the naming convention.In this sample we are using DIAEngineAnalysis.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot4.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+   4.Go to Running_Pipline.csv.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot5.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    5.Click on edit. [Click on the blue rectangle area]
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot6.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    6.Add the folder name in the CSV. In this sample it is DIAEngineAnalysis
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot7.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+  7.Commit the changes.
+  </div>
+</div>
+<div class="w3-display-container mySlides">
+  <img src="screenshot8.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    8.Go to Travis CI by clicking on the blue box.
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot9.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    9.Check the output in the "Job Log " in Travis CI .
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot10.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    10.Check the output in the "Job Log " in Travis CI .
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot11.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    11.Check the error in the code if any.
+  </div>
+</div>
+
+
+
+<div class="w3-display-container mySlides">
+  <img src="screenshot12.png" style="width:100%">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    12.You can check your coverage report in this folder in "index.html".
+  </div>
+</div>
+
+
+
+
+
+
+
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
+
