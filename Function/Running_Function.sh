@@ -1,4 +1,4 @@
-cd DIAO2Sensor
+cd DIARoadProfile
 python Test*.py
 pwd
 coverage run   --source=.  Test*.py

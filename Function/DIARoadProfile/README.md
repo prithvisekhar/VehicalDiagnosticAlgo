@@ -10,7 +10,7 @@ The function detects potholes on roads according to accelerometer readings in th
 ## Output
 - Graph indicating all the values exceeding a threshold of -0.2 confirmed as potholes. (Acceleration vs Time)
 
-![](Result/Dataset-1.png)
+![](Result1/Dataset-1.png)
 
 ## Coverage link 
 [Link](https://raw.githack.com/prithvisekhar/VehicalDiagnosticAlgo/gh-pages/Function/DIARoadProfile/htmlcov/index.html)

@@ -4,7 +4,7 @@ The stoichiometric ratio is the exact ratio between air and flammable gas or vap
 The number of instances when the combustion is lean (More air and
 less fuel) or rich (More fuel and less air) will directly affect the mileage and engine performance.
 
-#Average Distance
+# Average Distance
 Suppose someone drives a car from one city to another and does not have clear understanding of the how much km/miles the vehicle will travel before it stops due to low fuel. Scary is not it ? Dont worry we are at your service , our state-of-the art algorithm keeps track of your fuel level , current mileage and even fuel mixture for correct and accurate average distance to zero fuel calculation.
 
 ### So How are we addressing the problem ?
