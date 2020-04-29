@@ -35,6 +35,8 @@ script:
   - bash Coverage_Function.sh 
   - echo "Done Done"
   - cd ..
+  - cd Datasets
+  - python Clean.py
   - git config user.name "John Doe"
   - git add -A
   - git commit -m "lkjlk"
