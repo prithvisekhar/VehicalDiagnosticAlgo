@@ -35,7 +35,7 @@ class TestDistAvg(unittest.TestCase):
                 plt.figure(1,figsize=(30,20))
                 plt.subplot(3,1,1)
                 plt.plot(x,DistanceToZero,label='Distance to zero Prediction every minute',marker='o',linewidth=6.0)
-                markerline, stemlines, baseline,=plt.stem(x,DistanceToZero,use_line_collection=True,linefmt='--')
+                markerline, stemlines, baseline,=plt.stem(x,DistanceToZero,linefmt='--')
                 plt.setp(stemlines,color='r', linewidth=3.0)
                 plt.setp(markerline,color='r', markersize=4.0)
                 plt.ylabel('Distance in km', fontsize = 24)
@@ -46,7 +46,7 @@ class TestDistAvg(unittest.TestCase):
 
                 plt.subplot(3,1,2)
                 plt.plot(x,Speed,label='Speed (km/hr)',marker='o',linewidth=6.0)
-                markerline, stemlines, baseline,=plt.stem(x,Speed,use_line_collection=True,linefmt='--')
+                markerline, stemlines, baseline,=plt.stem(x,Speed,linefmt='--')
                 plt.setp(stemlines,color='r', linewidth=3.0)
                 plt.setp(markerline,color='r', markersize=4.0)
                 plt.ylabel('Speed in km/hr', fontsize = 24)
@@ -57,7 +57,7 @@ class TestDistAvg(unittest.TestCase):
 
                 plt.subplot(3,1,3)
                 plt.plot(x,Mileage_Mean,label='Mileage (km/ltr)',marker='o',linewidth=6.0)
-                markerline, stemlines, baseline,=plt.stem(x,Mileage_Mean,use_line_collection=True,linefmt='--')
+                markerline, stemlines, baseline,=plt.stem(x,Mileage_Mean,linefmt='--')
                 plt.setp(stemlines,color='r', linewidth=3.0)
                 plt.setp(markerline,color='r', markersize=4.0)
                 plt.ylabel('Mileage in km/ltr', fontsize = 24)
