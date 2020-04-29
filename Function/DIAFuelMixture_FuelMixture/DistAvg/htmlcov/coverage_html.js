@@ -1,5 +1,5 @@
 // Licensed under the Apache License: http://www.apache.org/licenses/LICENSE-2.0
-// For details: https://github.com/nedbat/coveragepy/blob/master/NOTICE.txt
+// For details: https://bitbucket.org/ned/coveragepy/src/default/NOTICE.txt
 
 // Coverage.py HTML report browser code.
 /*jslint browser: true, sloppy: true, vars: true, plusplus: true, maxerr: 50, indent: 4 */
@@ -169,16 +169,22 @@ coverage.wire_up_filter = function () {
 
 // Loaded on index.html
 coverage.index_ready = function ($) {
-    // Look for a localStorage item containing previous sort settings:
+    // Look for a cookie containing previous sort settings:
     var sort_list = [];
-    var storage_name = "COVERAGE_INDEX_SORT";
-    var stored_list = undefined;
-    try {
-        stored_list = localStorage.getItem(storage_name);
-    } catch(err) {}
+    var cookie_name = "COVERAGE_INDEX_SORT";
+    var i;
 
-    if (stored_list) {
-        sort_list = JSON.parse('[[' + stored_list + ']]');
+    // This almost makes it worth installing the jQuery cookie plugin:
+    if (document.cookie.indexOf(cookie_name) > -1) {
+        var cookies = document.cookie.split(";");
+        for (i = 0; i < cookies.length; i++) {
+            var parts = cookies[i].split("=");
+
+            if ($.trim(parts[0]) === cookie_name && parts[1]) {
+                sort_list = eval("[[" + parts[1] + "]]");
+                break;
+            }
+        }
     }
 
     // Create a new widget which exists only to save and restore
@@ -225,9 +231,7 @@ coverage.index_ready = function ($) {
 
     // Watch for page unload events so we can save the final sort settings:
     $(window).unload(function () {
-        try {
-            localStorage.setItem(storage_name, sort_list.toString())
-        } catch(err) {}
+        document.cookie = cookie_name + "=" + sort_list.toString() + "; path=/";
     });
 };
 
@@ -236,7 +240,7 @@ coverage.index_ready = function ($) {
 coverage.pyfile_ready = function ($) {
     // If we're directed to a particular line number, highlight the line.
     var frag = location.hash;
-    if (frag.length > 2 && frag[1] === 't') {
+    if (frag.length > 2 && frag[1] === 'n') {
         $(frag).addClass('highlight');
         coverage.set_sel(parseInt(frag.substr(2), 10));
     }
@@ -261,22 +265,21 @@ coverage.pyfile_ready = function ($) {
 
     coverage.init_scroll_markers();
 
-    // Rebuild scroll markers when the window height changes.
-    $(window).resize(coverage.build_scroll_markers);
+    // Rebuild scroll markers after window high changing
+    $(window).resize(coverage.resize_scroll_markers);
 };
 
 coverage.toggle_lines = function (btn, cls) {
     btn = $(btn);
-    var show = "show_"+cls;
-    if (btn.hasClass(show)) {
-        $("#source ." + cls).removeClass(show);
-        btn.removeClass(show);
+    var hide = "hide_"+cls;
+    if (btn.hasClass(hide)) {
+        $("#source ."+cls).removeClass(hide);
+        btn.removeClass(hide);
     }
     else {
-        $("#source ." + cls).addClass(show);
-        btn.addClass(show);
+        $("#source ."+cls).addClass(hide);
+        btn.addClass(hide);
     }
-    coverage.build_scroll_markers();
 };
 
 // Return the nth line div.
@@ -287,6 +290,11 @@ coverage.line_elt = function (n) {
 // Return the nth line number div.
 coverage.num_elt = function (n) {
     return $("#n" + n);
+};
+
+// Return the container of all the code.
+coverage.code_container = function () {
+    return $(".linenos");
 };
 
 // Set the selection.  b and e are line numbers.
@@ -307,17 +315,9 @@ coverage.to_first_chunk = function () {
     coverage.to_next_chunk();
 };
 
-// Return a string indicating what kind of chunk this line belongs to,
-// or null if not a chunk.
-coverage.chunk_indicator = function (line_elt) {
-    var klass = line_elt.attr('class');
-    if (klass) {
-        var m = klass.match(/\bshow_\w+\b/);
-        if (m) {
-            return m[0];
-        }
-    }
-    return null;
+coverage.is_transparent = function (color) {
+    // Different browsers return different colors for "none".
+    return color === "transparent" || color === "rgba(0, 0, 0, 0)";
 };
 
 coverage.to_next_chunk = function () {
@@ -325,14 +325,14 @@ coverage.to_next_chunk = function () {
 
     // Find the start of the next colored chunk.
     var probe = c.sel_end;
-    var chunk_indicator, probe_line;
+    var color, probe_line;
     while (true) {
         probe_line = c.line_elt(probe);
         if (probe_line.length === 0) {
             return;
         }
-        chunk_indicator = c.chunk_indicator(probe_line);
-        if (chunk_indicator) {
+        color = probe_line.css("background-color");
+        if (!c.is_transparent(color)) {
             break;
         }
         probe++;
@@ -342,11 +342,11 @@ coverage.to_next_chunk = function () {
     var begin = probe;
 
     // Find the end of this chunk.
-    var next_indicator = chunk_indicator;
-    while (next_indicator === chunk_indicator) {
+    var next_color = color;
+    while (next_color === color) {
         probe++;
         probe_line = c.line_elt(probe);
-        next_indicator = c.chunk_indicator(probe_line);
+        next_color = probe_line.css("background-color");
     }
     c.set_sel(begin, probe);
     c.show_selection();
@@ -361,25 +361,25 @@ coverage.to_prev_chunk = function () {
     if (probe_line.length === 0) {
         return;
     }
-    var chunk_indicator = c.chunk_indicator(probe_line);
-    while (probe > 0 && !chunk_indicator) {
+    var color = probe_line.css("background-color");
+    while (probe > 0 && c.is_transparent(color)) {
         probe--;
         probe_line = c.line_elt(probe);
         if (probe_line.length === 0) {
             return;
         }
-        chunk_indicator = c.chunk_indicator(probe_line);
+        color = probe_line.css("background-color");
     }
 
     // There's a prev chunk, `probe` points to its last line.
     var end = probe+1;
 
     // Find the beginning of this chunk.
-    var prev_indicator = chunk_indicator;
-    while (prev_indicator === chunk_indicator) {
+    var prev_color = color;
+    while (prev_color === color) {
         probe--;
         probe_line = c.line_elt(probe);
-        prev_indicator = c.chunk_indicator(probe_line);
+        prev_color = probe_line.css("background-color");
     }
     c.set_sel(probe+1, end);
     c.show_selection();
@@ -451,29 +451,29 @@ coverage.select_line_or_chunk = function (lineno) {
     if (probe_line.length === 0) {
         return;
     }
-    var the_indicator = c.chunk_indicator(probe_line);
-    if (the_indicator) {
+    var the_color = probe_line.css("background-color");
+    if (!c.is_transparent(the_color)) {
         // The line is in a highlighted chunk.
         // Search backward for the first line.
         var probe = lineno;
-        var indicator = the_indicator;
-        while (probe > 0 && indicator === the_indicator) {
+        var color = the_color;
+        while (probe > 0 && color === the_color) {
             probe--;
             probe_line = c.line_elt(probe);
             if (probe_line.length === 0) {
                 break;
             }
-            indicator = c.chunk_indicator(probe_line);
+            color = probe_line.css("background-color");
         }
         var begin = probe + 1;
 
         // Search forward for the last line.
         probe = lineno;
-        indicator = the_indicator;
-        while (indicator === the_indicator) {
+        color = the_color;
+        while (color === the_color) {
             probe++;
             probe_line = c.line_elt(probe);
-            indicator = c.chunk_indicator(probe_line);
+            color = probe_line.css("background-color");
         }
 
         coverage.set_sel(begin, probe);
@@ -487,7 +487,7 @@ coverage.show_selection = function () {
     var c = coverage;
 
     // Highlight the lines in the chunk
-    $(".linenos .highlight").removeClass("highlight");
+    c.code_container().find(".highlight").removeClass("highlight");
     for (var probe = c.sel_begin; probe > 0 && probe < c.sel_end; probe++) {
         c.num_elt(probe).addClass("highlight");
     }
@@ -517,21 +517,21 @@ coverage.finish_scrolling = function () {
 coverage.init_scroll_markers = function () {
     var c = coverage;
     // Init some variables
-    c.lines_len = $('#source p').length;
+    c.lines_len = $('td.text p').length;
     c.body_h = $('body').height();
     c.header_h = $('div#header').height();
+    c.missed_lines = $('td.text p.mis, td.text p.par');
 
     // Build html
-    c.build_scroll_markers();
+    c.resize_scroll_markers();
 };
 
-coverage.build_scroll_markers = function () {
+coverage.resize_scroll_markers = function () {
     var c = coverage,
         min_line_height = 3,
         max_line_height = 10,
         visible_window_h = $(window).height();
 
-    c.lines_to_mark = $('#source').find('p.show_run, p.show_mis, p.show_exc, p.show_exc, p.show_par');
     $('#scroll_marker').remove();
     // Don't build markers if the window has no scroll bar.
     if (c.body_h <= visible_window_h) {
@@ -555,16 +555,11 @@ coverage.build_scroll_markers = function () {
 
     var previous_line = -99,
         last_mark,
-        last_top,
-        offsets = {};
+        last_top;
 
-    // Calculate line offsets outside loop to prevent relayouts
-    c.lines_to_mark.each(function() {
-        offsets[this.id] = $(this).offset().top;
-    });
-    c.lines_to_mark.each(function () {
-        var id_name = $(this).attr('id'),
-            line_top = Math.round(offsets[id_name] * marker_scale),
+    c.missed_lines.each(function () {
+        var line_top = Math.round($(this).offset().top * marker_scale),
+            id_name = $(this).attr('id'),
             line_number = parseInt(id_name.substring(1, id_name.length));
 
         if (line_number === previous_line + 1) {
