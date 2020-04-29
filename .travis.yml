@@ -16,6 +16,7 @@ install:
   - pip install xlrd
   - pip install matplotlib
   - pip install codeclimate-test-reporter
+  - pip install PyDrive
 
 
 script:
