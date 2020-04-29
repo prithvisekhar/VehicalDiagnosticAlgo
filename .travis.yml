@@ -24,6 +24,9 @@ script:
   - git log -1 
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - pwd
+  - cd Datasets
+  - python Drive.py
+  - cd ..
   - cd Function
   - python Run_Pipline.py
   - bash Running_Function.sh
