@@ -9,8 +9,8 @@ Suppose someone drives a car from one city to another and does not have clear un
 
 ### So How are we addressing the problem ?
 Our Algorithm is explained in below flowchart.
-![](FuelMixture&AverageDIstanceFlowchart.jpg)
-
+![](FuelMixture.png)
+![](AverageDistance.png)
 # Input
  
 -   O2 Volts Bank 1 sensor 2(V)
