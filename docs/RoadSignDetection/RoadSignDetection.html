@@ -1,0 +1,25 @@
+<h1><p align = "left">Road Signs Detection</h1>
+<body>
+<p align = "justify">
+Identification and classification of road signs are the major tasks of the ADAS systems for a controlled vehicle driving. Road signs such as speed limits, pedestrian or animal cross boards, roadwork indications, overhead warning boards, direction boards, railway tracks, etc., need to be detected in taking a decision on changing the direction and speed of the moving vehicle. Identification of traffic signs also comes under this task.
+Along with the road signs detection, an ADAS system helps in detecting specific texts or signs as programmed by the user.
+<br>
+</body>
+
+<h2><p align = "left">Few Challenges and Solutions</h2>
+<body>
+<p align = "justify">
+<ul>
+  <li>False detection of signs: Employing edge-detection algorithms like Canny, Sobel, etc., to identify the signs in the captured video frame will be helpful in the proper identification of signs.</li>
+  <li>Detection of inappropriate signs as road signs: Signs, which are present in the environment such as walls, houses, and posters should not be detected as road signs. By having a set of road sign images and using OpenCV algorithms, the detected signs can be classified whether they are road signs or not.</li>
+  <li>False detection because of environmental conditions: By using the image pre-processing algorithms as smoothening, noise removal, and edge detection, the layers present on the image can be cleaned up for further analysis to avoid false detection due to environmental conditions such as night, fog, rain, etc.</li>
+  <li>Frequent occurrences of road signs: If multiple road signs are in close proximity, leaving less time for ADAS systems to make a decision, the chances of missing the signs can become high and hence prone to accidents. By using a high-speed processor with multiple processing units like TI’s TDA2x, TDA2px, and TDA3x processor, this issue can be resolved.</li>
+  <li>Presence of multiple signs in a frame: The ADAS system should have algorithms to separate the signs in a single frame, understand each one and take a decision as per requirement. Image processing algorithms such as image classifiers and dividers with sign-to-requirement mapping logic can be used to overcome this condition.</li>
+</ul>
+<br>
+</body>
+
+<img src="https://hondanews.eu/image/cars/low/28983/20_20/13?v=2" alt="Traffic Sign Detection">
+
+
+
