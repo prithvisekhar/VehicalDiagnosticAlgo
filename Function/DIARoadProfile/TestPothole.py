@@ -48,7 +48,7 @@ class Test_Pothole(unittest.TestCase):
                 plt.ylabel('Acceleration After High Pass Filter')
                 plt.xlabel('Time in Seconds')
                 plt.legend(loc='upper right')
-                plt.savefig(path+ '.png')
+                plt.savefig(path+ '1.png')
                 plt.close()
                 plt.figure(2)
                 plt.plot(time,Speed, label='Speed')
