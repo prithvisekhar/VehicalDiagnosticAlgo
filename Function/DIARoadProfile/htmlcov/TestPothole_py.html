@@ -189,8 +189,8 @@
 <p id="t24" class="stm run hide_run">                <span class="nam">TempFile1</span> <span class="op">=</span> <span class="nam">df_File</span><span class="op">[</span><span class="str">"Input_File_Name"</span><span class="op">]</span><span class="op">[</span><span class="nam">i</span><span class="op">]</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">'/'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t25" class="stm run hide_run">                <span class="nam">TempFile3</span> <span class="op">=</span> <span class="nam">TempFile1</span><span class="op">[</span><span class="op">-</span><span class="num">1</span><span class="op">]</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">'.'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t26" class="stm run hide_run">                <span class="nam">TempFile4</span> <span class="op">=</span> <span class="nam">str</span><span class="op">(</span><span class="nam">TempFile3</span><span class="op">[</span><span class="num">0</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t27" class="stm run hide_run">                <span class="nam">path</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="str">"Result1/"</span><span class="op">,</span> <span class="nam">TempFile4</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t28" class="pln">                <span class="com">#path1 = os.path.join("Result2/", TempFile4)</span><span class="strut">&nbsp;</span></p>
+<p id="t27" class="stm run hide_run">                <span class="nam">path</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">path</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="str">"Result/"</span><span class="op">,</span> <span class="nam">TempFile4</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t28" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t29" class="stm run hide_run">                <span class="nam">time</span> <span class="op">=</span> <span class="nam">df</span><span class="op">[</span><span class="str">'Trip Time(Since journey start)(s)'</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t30" class="stm run hide_run">                <span class="nam">Accx</span> <span class="op">=</span> <span class="nam">df</span><span class="op">[</span><span class="str">'Acceleration Sensor(X axis)(g)'</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t31" class="stm run hide_run">                <span class="nam">Accy</span> <span class="op">=</span> <span class="nam">df</span><span class="op">[</span><span class="str">'Acceleration Sensor(Y axis)(g)'</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
@@ -266,7 +266,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3</a>,
-            created at 2020-05-10 09:13
+            created at 2020-05-10 09:15
         </p>
     </div>
 </div>
