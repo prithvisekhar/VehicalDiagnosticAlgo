@@ -24,8 +24,8 @@ class Test_Pothole(unittest.TestCase):
                 TempFile1 = df_File["Input_File_Name"][i].split('/')
                 TempFile3 = TempFile1[-1].split('.')
                 TempFile4 = str(TempFile3[0])
-                path = os.path.join("Result1/", TempFile4)
-                #path1 = os.path.join("Result2/", TempFile4)
+                path = os.path.join("Result/", TempFile4)
+               
                 time = df['Trip Time(Since journey start)(s)']
                 Accx = df['Acceleration Sensor(X axis)(g)'] 
                 Accy = df['Acceleration Sensor(Y axis)(g)']
