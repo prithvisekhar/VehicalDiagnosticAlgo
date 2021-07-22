@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="description" content="Udacity Self-Driving Car Nanodegree -- Project 1">
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://jefflirion.github.io/stylesheets/stylesheet.css">
+
+<title>Udacity Self-Driving Car Nanodegree -- Project 1</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+<header class="inner">
+<a id="home_banner" href="https://jefflirion.github.io/udacity/index.html#self-driving-car">Self-Driving Car</a>
+<a id="repo_banner" href="https://github.com/JeffLIrion/udacity_car_nanodegree_project01">View this repo</a>
+<h1 id="project_title">Udacity Self-Driving Car Nanodegree -- Project 1</h1>
+
+</header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+<section id="main_content" class="inner">
+
+
+<h1><strong>Finding Lane Lines on the Road</strong></h1>
+<p><a href="https://jefflirion.github.io/udacity_car_nanodegree_project01/P1.html">Exported Jupyter notebook</a></p>
+<h3>1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.</h3>
+<p>My pipeline consisted of 5 steps:</p>
+<ol>
+<li>
+<p>Convert the image to grayscale and apply a Gaussian blur.  For the parameters, I used <code>kernel_size = (5, 5)</code>.<br />
+<img alt="step1" src="./images/1_Gaussian.png" title="Step 1: Apply Gaussian blur" /></p>
+</li>
+<li>
+<p>Apply Canny edge detection.  In line with the recommended 2:1 or 3:1 ratio of thresholds, I used <code>low_threshold = 50</code> and <code>high_threshold = 150</code>.<br />
+<img alt="step2" src="./images/2_Canny.png" title="Step 2: Apply Canny edge detection" /></p>
+</li>
+<li>
+<p>Apply a mask to the image outputted by Canny image detection.  I used a simple trapezoid mask.<br />
+<img alt="step3" src="./images/3_mask.png" title="Step 3: Apply a mask" /></p>
+</li>
+<li>
+<p>Apply the Hough Transform to the masked image from step 3.<br />
+<img alt="step4" src="./images/4_Hough.png" title="Step 4: Hough Transform" /></p>
+</li>
+<li>
+<p>Process and filter the lines found by the Hough Transform.<br />
+<img alt="step5" src="./images/5_select.png" title="Step 5: Filter, process, and select edges" /></p>
+</li>
+</ol>
+<p>Steps 4 and 5 were performed in an iterative fashion.  I initialized the Hough Transform parameters as <code>threshold = 20</code>, <code>min_line_length = 200</code>, and <code>max_line_gap = 100</code>.  Since the output of the Hough Transform is a list called <code>lines</code> that consists of a pair of endpoints for each line, I sorted these lines by their length, from longest to shortest.  I extended these lines to the top and bottom of the masked image region.  I specified intervals at the bottom left, bottom right, and top of the image that the <em>x</em> coordinates of the endpoints should lie within, and I removed entries in the <code>lines</code> list whose endpoints fell outside these intervals.  I declared the longest line in <code>lines</code> to be one of the two lane lines, and for the other I took the longest remaining line whose slope was of the opposite sign as that of <code>lines[0]</code>.  </p>
+<p>If this process did not yield two lines, then I divided in half the Hough parameters that I mentioned above and repeated steps 4 and 5.  </p>
+<h3>2. Identify potential shortcomings with your current pipeline</h3>
+<p>This is a simple lane detection pipeline, and as such it has a number of potential shortcomings.  </p>
+<p>First, since we are fitting lines (not curves) to the lane lines, this pipeline may yield poor results on urban roads with sharp turns.  Second, it may struggle when there are signs in the road, such as arrows, crosswalks, or or words (e.g., "do not block").  It may also struggle when there are double lane lines (i.e., "do not cross" lines).  This pipeline may not be robust to different lighting.  Finally, it would probably have difficulty when there are a lot of cars on the road and the lane lines cannot be seen 100+ feet in front of the car.  </p>
+<h3>3. Suggest possible improvements to your pipeline</h3>
+<p>To more accurately detect the lane lines, it would be beneficial to fit a nonlinear curve to the lanes (such as a spline), instead of fitting a line.  </p>
+<p>One issue that can be seen in the videos is that the lane lines sometimes jump around.  To obtain smoother results, we could incorporate information from the previous frame(s) when detecting lanes in the current frame.  </p>
+<br>
+
+<h2>Videos</h2>
+<h4>solidWhiteRight.mp4</h4>
+<video width="320" controls>
+<source src="./test_videos_output/solidWhiteRight.mp4" type="video/mp4">
+</video>
+<br><br>
+
+<h4>solidYellowLeft.mp4</h4>
+<video width="320" controls>
+<source src="./test_videos_output/solidYellowLeft.mp4" type="video/mp4">
+</video>
+<br><br>
+
+<h4>challenge.mp4</h4>
+<video width="320" controls>
+<source src="./test_videos_output/challenge.mp4" type="video/mp4">
+</video>
+
+
+
+</section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+<footer class="inner">
+<p class="copyright">Webpage maintained by <a href="https://github.com/JeffLIrion">Jeff Irion</a></p>
+<p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+</footer>
+</div>
+
+
+
+
+</body>
+</html>
