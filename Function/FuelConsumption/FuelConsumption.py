@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 
 # create figure and axis objects with subplots()
@@ -22,7 +21,10 @@ def fuel_monitoring(EL, FM, speed, KMPL):
 
     # twin object for two different y-axis on the sample plot
     ax4 = ax3.twinx()
+    ax4.set_ylim(8, 16)
     ax4.plot(KMPL, color="blue")
     ax4.set_ylabel("KM per Liter", color="blue", fontsize=14)
+    plt.yticks(KMPL)
+    # ax4.set_ylim(8,16)
     plt.show()
     # fig2.savefig('Vehicle speed_KM per litre_5')
