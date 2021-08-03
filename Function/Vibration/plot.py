@@ -1,9 +1,7 @@
 import matplotlib.pyplot as plt
 
-def fft_plot(FX_s, AX_s, FY_s, AY_s, FZ_s, AZ_s,
-             FX_e, AX_e, FY_e, AY_e, FZ_e, AZ_e):
 
-    plt.figure(figsize=(650, 650))
+def fft_grpah(FX_s, AX_s, FY_s, AY_s, FZ_s, AZ_s, FX_e, AX_e, FY_e, AY_e, FZ_e, AZ_e):
 
     plt.subplot(2, 3, 1)
     plt.plot(FX_s, AX_s, 'r', label='x fft')
@@ -46,5 +44,4 @@ def fft_plot(FX_s, AX_s, FY_s, AY_s, FZ_s, AZ_s,
     plt.ylabel('Amplitude in Z direction at end')
     plt.legend()
     plt.grid()
-    # plt.savefig('Overall.png')
     plt.show()
