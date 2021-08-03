@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from Turning import check_turn, quality_turn
 
-data = pd.read_csv('MarL2.csv')
+data = pd.read_csv('XUV.csv')
 # print(data[' Bearing'])
 df = pd.DataFrame()
 df['time'] = data['Trip Time(Since journey start)(s)']
@@ -10,18 +10,14 @@ df['Latitude'] = data[' Latitude']
 df['Longitude'] = data[' Longitude']
 df['Compass angle'] = data[' Bearing'].astype('float')
 df['Speed'] = data['Speed (OBD)(km/h)'].astype('float')
-df['Pedal_position'] = data['Accelerator PedalPosition D(%)']
 
 df['Compass angle'] = df['Compass angle'].replace(0, np.nan)
 df['Compass angle'] = df['Compass angle'].replace(method='ffill')
 df = df.dropna(axis=0)
 df.set_index('time', inplace=True)
-# print(df.head())
 
 Speed = df['Speed']
 Angle = df['Compass angle']
-ans = pd.DataFrame(
-    columns=['Start', 'End', 'R/L', 'Latitude', 'Longitude', 'Score'])
 
 
 spot1 = []

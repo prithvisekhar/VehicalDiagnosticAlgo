@@ -3,6 +3,7 @@ import numpy as np
 
 def check_turn(angle, start, end):
     x = angle.iloc[start] - angle.iloc[end]
+    turn = 0
     if x < 0:
         if abs(x) > 180:
             turn = 'Left'
@@ -19,7 +20,6 @@ def check_turn(angle, start, end):
 def quality_turn(speed, start, end):
     x = np.array(speed.iloc[start:end+1])
     n = len(x)
-    # print(df['Speed'].iloc[start:end+1])
 
     score = 0
     for i in range(n):
